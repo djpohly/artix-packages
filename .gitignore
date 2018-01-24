@@ -1,0 +1,14 @@
+*.pkg.tar.xz
+*.log
+*.sig
+*.gz
+*.xz
+*.tar
+*.bz
+*.zip
+linux-lts.install.pkg
+*.service
+*.timer
+iptables-flush
+*.log
+
