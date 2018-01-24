@@ -1,0 +1,35 @@
+# Maintainer: artoo <artoo@cromnix.org>
+
+_url="http://dev.gentoo.org/~williamh/dist"
+_pkgname=udev-init-scripts
+
+_sed_args=(-e "s|/bin/udevadm|/usr/bin/udevadm|g" -e "s|/sbin/udevd|/usr/bin/udevd|g")
+_sed_args+=(-e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g')
+
+pkgname=eudev-openrc
+pkgver=32
+pkgrel=4
+pkgdesc="OpenRC eudev startup scripts"
+arch=('any')
+url="https://github.com/cromnix/artix"
+license=('GPL2')
+# groups=('base')
+provides=('udev-openrc')
+depends=('kmod-openrc' 'eudev')
+conflicts=('systemd-sysvcompat' 'udev-openrc')
+replaces=('udev-openrc')
+source=("${_url}/${_pkgname}-${pkgver}.tar.gz")
+sha256sums=('d5ae437291ae140194f67fec2c9a6ceeda39708433840e7b4b0361cc5ae53eaa')
+
+package(){
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+    make DESTDIR="${pkgdir}" install
+
+    for f in ${pkgdir}/etc/init.d/*;do
+        sed ${_sed_args[@]} -i "$f"
+    done
+
+    install -d "${pkgdir}/etc/runlevels/sysinit"
+    ln -sf "/etc/init.d/udev" "${pkgdir}/etc/runlevels/sysinit/udev"
+    ln -sf "/etc/init.d/udev-trigger" "${pkgdir}/etc/runlevels/sysinit/udev-trigger"
+}

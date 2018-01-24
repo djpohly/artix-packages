@@ -1,0 +1,80 @@
+# $Id$
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Contributor: Mantas Mikulėnas <grawity@gmail.com>
+
+pkgname=gssproxy
+pkgver=0.7.0
+pkgrel=1
+pkgdesc="GSSAPI Proxy"
+arch=(i686 x86_64)
+url="https://pagure.io/gssproxy"
+license=('custom: MIT')
+depends=('krb5' 'popt' 'ding-libs')
+makedepends=('popt' 'libxslt' 'eudev' 'docbook-xsl' 'doxygen'  'po4a')
+options=('emptydirs' 'makeflags')
+backup=(etc/gssproxy/{gssproxy,24-nfs-server,80-httpd,99-nfs-client}.conf
+        etc/gss/mech.d/gssproxy.conf)
+source=(https://releases.pagure.org/gssproxy/$pkgname-$pkgver.tar.gz)
+sha512sums=('00cd1d05e12f93f81c11062ccf4950e521960f752a6121f2055e47294a51894eda2415c558d3bc0d4c496146ab8f82a1162328acfb5eb3405c7b116774fa9f89')
+
+prepare() {
+  cd "$srcdir/gssproxy-$pkgver"
+
+#  autoreconf -vfi
+}
+
+build() {
+  cd gssproxy-$pkgver
+  # make it find bundled verto from krb5 without its own pkg-config file
+  export VERTO_CFLAGS="-I/usr/include"
+  export VERTO_LIBS="-L/usr/lib -lverto"
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc  \
+    --with-pubconf-path=/etc/gssproxy \
+    --sbindir=/usr/bin \
+    --localstatedir=/var \
+    --without-selinux \
+    --with-os=gentoo \
+    -with-initscript=none \
+    --with-gpp-default-behavior=REMOTE_FIRST
+
+    #     --with-initscript=
+
+#LOCAL_FIRST|LOCAL_ONLY|REMOTE_FIRST|REMOTE_ONLY
+#                          Which default behavior the gssproxy interposer
+#                          plugin should use [LOCAL_FIRST]
+#--help
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  make test_proxymech
+}
+
+
+package() {
+  cd gssproxy-$pkgver
+  make DESTDIR=$pkgdir install
+
+  # cleanup empty directories
+  rm -rf $pkgdir/usr/include
+  rm -rf $pkgdir/usr/share/doc
+
+  # install default config files
+  install -m644 examples/gssproxy.conf $pkgdir/etc/gssproxy/gssproxy.conf
+  # nfs services
+  install -m644 examples/24-nfs-server.conf $pkgdir/etc/gssproxy/24-nfs-server.conf
+  install -m644 examples/99-nfs-client.conf $pkgdir/etc/gssproxy/99-nfs-client.conf
+  # httpd service / use Arch UID/GID http/33 (by pkg filesystem)
+  install -m644 examples/80-httpd.conf $pkgdir/etc/gssproxy/80-httpd.conf
+  sed -i -e "s:euid = apache:euid = http:" $pkgdir/etc/gssproxy/80-httpd.conf
+
+  install -Dm644 examples/mech  $pkgdir/etc/gss/mech.d/gssproxy.conf
+
+  # FS#51574
+  install -m700 -d ${pkgdir}/var/lib/gssproxy/rcache
+
+  install -m755 -d ${pkgdir}/usr/share/licenses/$pkgname
+  install -m644 COPYING ${pkgdir}/usr/share/licenses/$pkgname/
+}

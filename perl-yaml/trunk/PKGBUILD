@@ -1,0 +1,33 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Charles Mauch <cmauch@gmail.com>
+
+pkgname=perl-yaml
+pkgver=1.24
+pkgrel=1
+pkgdesc="Perl/CPAN Module YAML : YAML Aint Markup Language"
+arch=('any')
+url="http://search.cpan.org/dist/YAML/"
+license=('GPL' 'PerlArtistic')
+depends=('perl')
+checkdepends=('perl-test-yaml')
+options=('!emptydirs')
+source=(http://www.cpan.org/authors/id/T/TI/TINITA/YAML-${pkgver}.tar.gz)
+sha512sums=('20ba196cf9c68a38154f68b884262b9f89463af5e67c1e59944070b2493f6d9515f92a2793f456e20fe7e6372b74da8f6c16b884274793b6c3aa0ed0134c340d')
+
+build() {
+  cd YAML-${pkgver}
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check() {
+  cd YAML-${pkgver}
+  make test
+}
+
+package() {
+  cd YAML-${pkgver}
+  make DESTDIR="${pkgdir}" install
+}

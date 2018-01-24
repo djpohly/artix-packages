@@ -1,0 +1,102 @@
+# $Id$
+# Maintainer: Eric Bélanger <eric@archlinux.org>
+# Maintainer: Thomas Bächler <thomas@archlinux.org>
+
+pkgbase=lvm2
+pkgname=('lvm2' 'device-mapper')
+pkgver=2.02.177
+pkgrel=1
+arch=('x86_64')
+url="http://sourceware.org/lvm2/"
+license=('GPL2' 'LGPL2.1')
+makedepends=('eudev' 'thin-provisioning-tools')
+groups=('base')
+validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17') # Alasdair G Kergon <agk@redhat.com>
+source=(https://mirrors.kernel.org/sourceware/lvm2/releases/LVM2.${pkgver}.tgz{,.asc}
+        lvm2_install
+        lvm2_hook
+        11-dm-initramfs.rules)
+sha256sums=('4025a23ec9b15c2cb7486d151c29dc953b75efc4d452cfe9dbbc7c0fac8e80f2'
+            'SKIP'
+            'd3097296bdfd9912dbef6ac78b908f7017b0a668a5347f0811f1c3aaacdca0cf'
+            '37e7619f0aacfb5da535148800426f7ff385487763cabd141b874599ad718df2'
+            'e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0')
+
+prepare() {
+  cd LVM2.${pkgver}
+
+  # enable lvmetad
+  sed -i 's|use_lvmetad = 0|use_lvmetad = 1|' conf/example.conf.in
+}
+
+build() {
+  local CONFIGUREOPTS=(
+    --prefix=/usr
+    --sbindir=/usr/bin
+    --sysconfdir=/etc
+    --localstatedir=/var
+    --enable-applib
+    --enable-cmdlib
+    --enable-dmeventd
+    --enable-lvmetad
+    --enable-lvmpolld
+    --enable-pkgconfig
+    --enable-readline
+    --enable-udev_rules
+    --enable-udev_sync
+    --with-cache=internal
+    --with-default-dm-run-dir=/run
+    --with-default-locking-dir=/run/lock/lvm
+    --with-default-pid-dir=/run
+    --with-default-run-dir=/run/lvm
+    --with-systemdsystemunitdir=no
+    --with-thin=internal
+    --with-udev-prefix=/usr
+  )
+
+  cp -a LVM2.${pkgver} LVM2-initramfs
+
+  cd LVM2.${pkgver}
+
+  ./configure "${CONFIGUREOPTS[@]}"
+  make
+
+  # Build legacy udev rule for initramfs
+  cd ../LVM2-initramfs
+  ./configure "${CONFIGUREOPTS[@]}"
+  cd udev
+  make 69-dm-lvm-metad.rules
+}
+
+package_device-mapper() {
+  pkgdesc="Device mapper userspace library and tools"
+  url="http://sourceware.org/dm/"
+  depends=('glibc' 'eudev')
+
+  cd LVM2.${pkgver}
+  make DESTDIR="${pkgdir}" install_device-mapper
+  # extra udev rule for device-mapper in initramfs
+  install -D -m644 "${srcdir}/11-dm-initramfs.rules" "${pkgdir}/usr/lib/initcpio/udev/11-dm-initramfs.rules"
+}
+
+package_lvm2() {
+  pkgdesc="Logical Volume Manager 2 utilities"
+  depends=('bash' "device-mapper>=${pkgver}" 'libeudev' 'readline' 'thin-provisioning-tools')
+  conflicts=('lvm' 'mkinitcpio<0.7')
+  backup=('etc/lvm/lvm.conf'
+    'etc/lvm/lvmlocal.conf')
+  options=('!makeflags')
+  install=lvm2.install
+
+  cd LVM2.${pkgver}
+  make DESTDIR="${pkgdir}" install_lvm2
+  # install applib
+  make -C liblvm DESTDIR="${pkgdir}" install
+  # /etc directories
+  install -d "${pkgdir}"/etc/lvm/{archive,backup}
+  # mkinitcpio hook
+  install -D -m644 "${srcdir}/lvm2_hook" "${pkgdir}/usr/lib/initcpio/hooks/lvm2"
+  install -D -m644 "${srcdir}/lvm2_install" "${pkgdir}/usr/lib/initcpio/install/lvm2"
+  # extra udev rule for lvmetad in initramfs
+  install -D -m644 "${srcdir}/LVM2-initramfs/udev/69-dm-lvm-metad.rules" "${pkgdir}/usr/lib/initcpio/udev/69-dm-lvm-metad.rules"
+}

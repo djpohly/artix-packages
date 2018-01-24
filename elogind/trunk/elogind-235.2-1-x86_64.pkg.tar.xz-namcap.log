@@ -1,0 +1,8 @@
+elogind W: Directory (var/lib/elogind) is empty
+elogind W: Referenced library 'libelogind-shared-235.2.so' is an uninstalled dependency
+elogind W: Dependency acl included but already satisfied
+elogind W: Dependency pam included but already satisfied
+elogind W: Dependency included and not needed ('dbus')
+elogind W: Dependency included and not needed ('eudev')
+elogind W: Dependency included and not needed ('libseccomp')
+elogind W: Dependency included and not needed ('libelogind')

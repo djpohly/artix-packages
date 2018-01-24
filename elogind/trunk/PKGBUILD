@@ -1,0 +1,68 @@
+# Maintainer: artoo <artoo@cromnix.org>
+
+pkgbase=elogind
+pkgname=('elogind' 'libelogind')
+pkgver=235.2
+pkgrel=1
+pkgdesc="The systemd project's logind, extracted to a standalone package"
+arch=('i686' 'x86_64' 'armv7h')
+url="https://github.com/elogind/elogind"
+license=('GPL' 'LGPL2.1')
+makedepends=('intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus' 'eudev' 'libseccomp' 'meson')
+options=('!libtool')
+source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
+        "protect-user-XDG_RUNTIME_DIR.patch")
+
+sha256sums=('db5d7362ab7fd74a1ea863247f90f3b821cdb3e4433ba049a2fdcf5bf62b0fb9'
+            '4b04eb4bd87a6b0b15290f87b475d87920d5060ee7bf1583a2320f8f7f4c7658')
+
+prepare() {
+    cd ${pkgbase}-${pkgver}
+    patch -Np1 -i ${srcdir}/protect-user-XDG_RUNTIME_DIR.patch
+}
+
+build() {
+    local meson_options=(
+        -Drootlibdir=/usr/lib
+        -Drootlibexecdir=/usr/lib/elogind
+        -Ddbuspolicydir=/usr/share/dbus-1/system.d
+        -Ddefault-hierarchy=hybrid
+        -Dcgroup-controller=openrc
+#         -Ddefault-kill-user-processes=false
+    )
+
+    arch-meson "$pkgbase-${pkgver}" build "${meson_options[@]}"
+
+    ninja -C build
+}
+
+package_elogind() {
+    pkgdesc="The systemd project's logind, extracted to a standalone package"
+    provides=("elogind=${pkgver}")
+    depends=('acl' 'pam' 'dbus' 'eudev' 'libseccomp' 'libelogind')
+    conflicts=('consolekit')
+    optdepends=('elogind-openrc: elogind initscript'
+                'polkit: polkit support')
+    backup=('etc/elogind/logind.conf')
+
+    DESTDIR="$pkgdir" ninja -C build install
+    
+    mkdir ${srcdir}/_libelogind
+    mv -v ${pkgdir}/usr/lib/pkgconfig ${srcdir}/_libelogind
+    mv -v ${pkgdir}/usr/include/ ${srcdir}/_libelogind
+    mv -v ${pkgdir}/usr/lib/libelogind*.so* ${srcdir}/_libelogind
+}
+
+package_libelogind(){
+    pkgdesc="elogind client libraries"
+    groups=('base-devel')
+    provides=('libelogind.so' "libelogind=${pkgver}")
+    depends=('libcap')
+
+    cd ${pkgbase}-${pkgver}
+
+    install -dm755 ${pkgdir}/usr/lib
+    mv ${srcdir}/_libelogind/include ${pkgdir}/usr
+    mv ${srcdir}/_libelogind/pkgconfig ${pkgdir}/usr/lib
+    mv ${srcdir}/_libelogind/libelogind*.so* ${pkgdir}/usr/lib
+}

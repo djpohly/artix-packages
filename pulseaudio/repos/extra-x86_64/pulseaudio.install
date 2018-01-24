@@ -1,0 +1,17 @@
+post_install() {
+  # Enable socket by default
+  echo
+ # systemctl --global enable pulseaudio.socket
+}
+
+post_upgrade() {
+  if (( $(vercmp $2 8.0-3) < 0)); then
+    echo
+    #systemctl --global enable pulseaudio.socket
+  fi
+}
+
+pre_remove() {
+    echo
+  #systemctl --global disable pulseaudio.socket
+}

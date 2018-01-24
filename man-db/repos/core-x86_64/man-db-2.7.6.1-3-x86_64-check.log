@@ -1,0 +1,529 @@
+Making check in docs
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/docs“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/docs“ wird verlassen
+Making check in gnulib/lib
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+make  check-recursive
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+make[3]: Für das Ziel „check-am“ ist nichts zu tun.
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+Making check in gnulib/po
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/po“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/po“ wird verlassen
+Making check in init
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird betreten
+Making check in systemd
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init/systemd“ wird betreten
+make[2]: Für das Ziel „check“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init/systemd“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird betreten
+make[2]: Für das Ziel „check-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird verlassen
+Making check in lib
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/lib“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/lib“ wird verlassen
+Making check in libdb
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/libdb“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/libdb“ wird verlassen
+Making check in src
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird betreten
+Making check in .
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird betreten
+make[2]: Für das Ziel „check-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird verlassen
+Making check in tests
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird betreten
+make  fspause \
+  testlib.sh lexgrog-1 man-1 man-2 man-3 man-4 man-5 man-6 man-7 man-8 man-9 man-10 man-11 manconv-1 manconv-2 manconv-3 mandb-1 mandb-2 mandb-3 mandb-4 mandb-5 mandb-6 mandb-7 whatis-1 zsoelim-1
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird betreten
+make[3]: Für das Ziel „testlib.sh“ ist nichts zu tun.
+make[3]: Für das Ziel „lexgrog-1“ ist nichts zu tun.
+make[3]: Für das Ziel „man-1“ ist nichts zu tun.
+make[3]: Für das Ziel „man-2“ ist nichts zu tun.
+make[3]: Für das Ziel „man-3“ ist nichts zu tun.
+make[3]: Für das Ziel „man-4“ ist nichts zu tun.
+make[3]: Für das Ziel „man-5“ ist nichts zu tun.
+make[3]: Für das Ziel „man-6“ ist nichts zu tun.
+make[3]: Für das Ziel „man-7“ ist nichts zu tun.
+make[3]: Für das Ziel „man-8“ ist nichts zu tun.
+make[3]: Für das Ziel „man-9“ ist nichts zu tun.
+make[3]: Für das Ziel „man-10“ ist nichts zu tun.
+make[3]: Für das Ziel „man-11“ ist nichts zu tun.
+make[3]: Für das Ziel „manconv-1“ ist nichts zu tun.
+make[3]: Für das Ziel „manconv-2“ ist nichts zu tun.
+make[3]: Für das Ziel „manconv-3“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-1“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-2“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-3“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-4“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-5“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-6“ ist nichts zu tun.
+make[3]: Für das Ziel „mandb-7“ ist nichts zu tun.
+make[3]: Für das Ziel „whatis-1“ ist nichts zu tun.
+make[3]: Für das Ziel „zsoelim-1“ ist nichts zu tun.
+  CC       fspause.o
+  CCLD     fspause
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird verlassen
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird betreten
+PASS: lexgrog-1
+PASS: man-2
+PASS: man-3
+PASS: man-1
+PASS: man-6
+PASS: man-7
+PASS: man-9
+PASS: man-10
+PASS: man-8
+PASS: manconv-3
+PASS: man-11
+PASS: mandb-1
+PASS: manconv-1
+PASS: mandb-6
+PASS: mandb-5
+PASS: mandb-7
+PASS: man-5
+PASS: mandb-3
+PASS: zsoelim-1
+PASS: mandb-4
+PASS: manconv-2
+PASS: whatis-1
+PASS: mandb-2
+PASS: man-4
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 24
+# PASS:  24
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird verlassen
+Making check in man
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+Making check in po4a
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/po4a“ wird betreten
+rm -rf ./tmp-po
+/usr/bin/mkdir -p ./tmp-po
+set -e; for f in po/man-db-manpages.pot po/da.po po/de.po po/fr.po po/id.po po/ja.po po/nl.po po/pl.po po/ru.po po/sv.po po/zh_CN.po; do \
+	base=`basename $f`; \
+	cp -p ./$f ./tmp-po/; \
+	chmod u+w ./tmp-po/$base; \
+done
+PERL5LIB=. po4a --variable srcdir=../../man --variable builddir=../../man --variable podir=./tmp-po --keep 0 ./po4a.cfg
+ (390 entries)
+rm -rf ./tmp-po
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/po4a“ wird verlassen
+Making check in es
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird betreten
+PASS: man8/catman.8
+PASS: man1/apropos.1
+PASS: man8/mandb.8
+PASS: man1/man.1
+PASS: man1/manpath.1
+PASS: man5/manpath.5
+PASS: man1/whatis.1
+PASS: man1/zsoelim.1
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 8
+# PASS:  8
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird verlassen
+Making check in it
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird betreten
+PASS: man1/apropos.1
+PASS: man1/whatis.1
+PASS: man1/manpath.1
+PASS: man1/zsoelim.1
+PASS: man8/accessdb.8
+PASS: man5/manpath.5
+PASS: man1/man.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 9
+# PASS:  9
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird verlassen
+Making check in da
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird betreten
+PASS: man1/lexgrog.1
+PASS: man1/manpath.1
+PASS: man1/whatis.1
+PASS: man1/apropos.1
+PASS: man1/zsoelim.1
+PASS: man8/accessdb.8
+PASS: man5/manpath.5
+PASS: man1/man.1
+PASS: man1/manconv.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird verlassen
+Making check in de
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird betreten
+PASS: man1/whatis.1
+PASS: man1/manpath.1
+PASS: man1/lexgrog.1
+PASS: man8/accessdb.8
+PASS: man1/manconv.1
+PASS: man1/zsoelim.1
+PASS: man1/apropos.1
+PASS: man5/manpath.5
+PASS: man1/man.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird verlassen
+Making check in fr
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird betreten
+PASS: man5/manpath.5
+PASS: man1/zsoelim.1
+PASS: man8/accessdb.8
+PASS: man1/lexgrog.1
+PASS: man1/apropos.1
+PASS: man1/manpath.1
+PASS: man1/man.1
+PASS: man1/whatis.1
+PASS: man1/manconv.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird verlassen
+Making check in id
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird betreten
+PASS: man1/lexgrog.1
+PASS: man1/manpath.1
+PASS: man8/accessdb.8
+PASS: man1/zsoelim.1
+PASS: man5/manpath.5
+PASS: man1/apropos.1
+PASS: man1/whatis.1
+PASS: man1/manconv.1
+PASS: man1/man.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird verlassen
+Making check in ja
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird betreten
+PASS: man1/manconv.1
+PASS: man5/manpath.5
+PASS: man1/zsoelim.1
+PASS: man1/manpath.1
+PASS: man8/accessdb.8
+PASS: man1/lexgrog.1
+PASS: man1/apropos.1
+PASS: man1/whatis.1
+PASS: man1/man.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird verlassen
+Making check in nl
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird betreten
+PASS: man1/man.1
+PASS: man1/manpath.1
+PASS: man1/apropos.1
+PASS: man1/zsoelim.1
+PASS: man1/lexgrog.1
+PASS: man1/manconv.1
+PASS: man5/manpath.5
+PASS: man1/whatis.1
+PASS: man8/accessdb.8
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird verlassen
+Making check in pl
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird betreten
+PASS: man1/whatis.1
+PASS: man8/accessdb.8
+PASS: man1/man.1
+PASS: man5/manpath.5
+PASS: man1/zsoelim.1
+PASS: man1/manconv.1
+PASS: man1/lexgrog.1
+PASS: man1/apropos.1
+PASS: man1/manpath.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird verlassen
+Making check in ru
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird betreten
+PASS: man8/accessdb.8
+PASS: man1/manpath.1
+PASS: man1/lexgrog.1
+PASS: man5/manpath.5
+PASS: man1/whatis.1
+PASS: man1/apropos.1
+PASS: man1/manconv.1
+PASS: man1/zsoelim.1
+PASS: man1/man.1
+PASS: man8/mandb.8
+PASS: man8/catman.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird verlassen
+Making check in sv
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird betreten
+PASS: man1/apropos.1
+PASS: man1/lexgrog.1
+PASS: man1/whatis.1
+PASS: man1/zsoelim.1
+PASS: man1/manconv.1
+PASS: man1/manpath.1
+PASS: man8/accessdb.8
+PASS: man5/manpath.5
+PASS: man1/man.1
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird verlassen
+Making check in zh_CN
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird betreten
+PASS: man1/manpath.1
+PASS: man1/lexgrog.1
+PASS: man1/apropos.1
+PASS: man8/accessdb.8
+PASS: man1/whatis.1
+PASS: man1/manconv.1
+PASS: man1/man.1
+PASS: man1/zsoelim.1
+PASS: man5/manpath.5
+PASS: man8/catman.8
+PASS: man8/mandb.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+make  check-TESTS
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+PASS: man1/whatis.1
+PASS: man1/apropos.1
+PASS: man8/accessdb.8
+PASS: man1/zsoelim.1
+PASS: man1/manpath.1
+PASS: man5/manpath.5
+PASS: man1/man.1
+PASS: man1/manconv.1
+PASS: man1/lexgrog.1
+PASS: man8/mandb.8
+PASS: man8/catman.8
+============================================================================
+Testsuite summary for man-db 2.7.6.1
+============================================================================
+# TOTAL: 11
+# PASS:  11
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+Making check in manual
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/manual“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/manual“ wird verlassen
+Making check in po
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/po“ wird betreten
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/po“ wird verlassen
+Making check in tools
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/tools“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/tools“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird betreten
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird verlassen

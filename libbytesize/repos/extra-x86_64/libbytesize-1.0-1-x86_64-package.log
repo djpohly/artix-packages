@@ -1,0 +1,55 @@
+Making install in .
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0“ wird betreten
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[2]: Für das Ziel „install-data-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0“ wird verlassen
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0“ wird verlassen
+Making install in po
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/po“ wird betreten
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/po“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/po“ wird verlassen
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/po“ wird verlassen
+Making install in src
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird betreten
+Making install in python
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src/python“ wird betreten
+make[3]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src/python“ wird betreten
+make[3]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+ /usr/bin/mkdir -p '/build/libbytesize/pkg/libbytesize/usr/lib/python3.6/site-packages/bytesize'
+ /usr/bin/install -c -m 644 bytesize.py __init__.py '/build/libbytesize/pkg/libbytesize/usr/lib/python3.6/site-packages/bytesize'
+ /usr/bin/mkdir -p '/build/libbytesize/pkg/libbytesize/usr/lib/python3.6/site-packages/bytesize'
+ /usr/bin/install -c -m 644 bytesize.py __init__.py '/build/libbytesize/pkg/libbytesize/usr/lib/python3.6/site-packages/bytesize'
+make[3]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src/python“ wird verlassen
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src/python“ wird verlassen
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird betreten
+make[3]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird betreten
+ /usr/bin/mkdir -p '/build/libbytesize/pkg/libbytesize/usr/include/bytesize'
+ /usr/bin/mkdir -p '/build/libbytesize/pkg/libbytesize/usr/lib'
+ /usr/bin/mkdir -p '/build/libbytesize/pkg/libbytesize/usr/lib/pkgconfig'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libbytesize.la '/build/libbytesize/pkg/libbytesize/usr/lib'
+ /usr/bin/install -c -m 644 bs_size.h '/build/libbytesize/pkg/libbytesize/usr/include/bytesize'
+ /usr/bin/install -c -m 644 ./bytesize.pc '/build/libbytesize/pkg/libbytesize/usr/lib/pkgconfig'
+libtool: install: /usr/bin/install -c .libs/libbytesize.so.1.0.0 /build/libbytesize/pkg/libbytesize/usr/lib/libbytesize.so.1.0.0
+libtool: install: (cd /build/libbytesize/pkg/libbytesize/usr/lib && { ln -s -f libbytesize.so.1.0.0 libbytesize.so.1 || { rm -f libbytesize.so.1 && ln -s libbytesize.so.1.0.0 libbytesize.so.1; }; })
+libtool: install: (cd /build/libbytesize/pkg/libbytesize/usr/lib && { ln -s -f libbytesize.so.1.0.0 libbytesize.so || { rm -f libbytesize.so && ln -s libbytesize.so.1.0.0 libbytesize.so; }; })
+libtool: install: /usr/bin/install -c .libs/libbytesize.lai /build/libbytesize/pkg/libbytesize/usr/lib/libbytesize.la
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+make[3]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird verlassen
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird verlassen
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/src“ wird verlassen
+Making install in dist
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/dist“ wird betreten
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/dist“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[2]: Für das Ziel „install-data-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/dist“ wird verlassen
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/dist“ wird verlassen
+Making install in tests
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/tests“ wird betreten
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/tests“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[2]: Für das Ziel „install-data-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/tests“ wird verlassen
+make[1]: Verzeichnis „/build/libbytesize/src/libbytesize-1.0/tests“ wird verlassen

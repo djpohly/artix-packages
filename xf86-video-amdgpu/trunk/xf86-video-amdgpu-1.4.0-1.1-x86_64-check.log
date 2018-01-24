@@ -1,0 +1,15 @@
+Making check in src
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird verlassen
+Making check in man
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird verlassen
+Making check in conf
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird betreten
+make[1]: Für das Ziel „check“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird betreten
+make[1]: Für das Ziel „check-am“ ist nichts zu tun.
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird verlassen

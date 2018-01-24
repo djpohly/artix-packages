@@ -1,0 +1,44 @@
+# $Id$
+# Maintainer: Eric Bélanger <eric@archlinux.org>
+
+pkgname=gpm
+pkgver=1.20.7
+pkgrel=8
+pkgdesc="A mouse server for the console and xterm"
+arch=('i686' 'x86_64')
+url="http://www.nico.schottelius.org/software/gpm/"
+license=('GPL')
+depends=('bash' 'procps-ng')
+options=('!makeflags')
+source=(https://github.com/telmich/gpm/archive/${pkgver}.tar.gz
+        gpm.sh
+        gpm-1.20.7-sigemptyset.patch
+        gpm-1.20.7-sysmacros.patch)
+sha1sums=('28d7cd78268e27cae847d2ab662b599b740c0bdb'
+          '94447c6f8bfadd062efa1a747a597426f339d13e'
+          'deb235e5acd5c9237dd03d8994faa535890a944b'
+          '014e188e6e2da8b57dcdb4130aa8b343ce5db008')
+          
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -Np1 -i "${srcdir}/gpm-1.20.7-sigemptyset.patch"
+  patch -Np1 -i "${srcdir}/gpm-1.20.7-sysmacros.patch"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./autogen.sh
+  ./configure --prefix=/usr --sysconfdir=/etc --sbindir=/usr/bin
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+  install -D -m755 ../gpm.sh "${pkgdir}/etc/profile.d/gpm.sh"
+
+# library fixes
+  cd "${pkgdir}/usr/lib/"
+  ln -s libgpm.so.2.* libgpm.so
+  chmod 755 "${pkgdir}"/usr/lib/libgpm.so.*
+}

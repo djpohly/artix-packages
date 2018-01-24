@@ -1,0 +1,33 @@
+Making install in src
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird betreten
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+ /usr/bin/mkdir -p '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/lib/xorg/modules/drivers'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   amdgpu_drv.la '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/lib/xorg/modules/drivers'
+libtool: install: /usr/bin/install -c .libs/amdgpu_drv.so /build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/lib/xorg/modules/drivers/amdgpu_drv.so
+libtool: install: /usr/bin/install -c .libs/amdgpu_drv.lai /build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/lib/xorg/modules/drivers/amdgpu_drv.la
+libtool: warning: remember to run 'libtool --finish /usr/lib/xorg/modules/drivers'
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird verlassen
+Making install in man
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird betreten
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+ /usr/bin/mkdir -p '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/share/man/man4'
+ /usr/bin/install -c -m 644 amdgpu.4 '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/share/man/man4'
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird verlassen
+Making install in conf
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird betreten
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+ /usr/bin/mkdir -p '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/share/X11/xorg.conf.d'
+ /usr/bin/install -c -m 644 10-amdgpu.conf '/build/xf86-video-amdgpu/pkg/xf86-video-amdgpu/usr/share/X11/xorg.conf.d'
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird betreten
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird betreten
+make[2]: Für das Ziel „install-exec-am“ ist nichts zu tun.
+make[2]: Für das Ziel „install-data-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird verlassen

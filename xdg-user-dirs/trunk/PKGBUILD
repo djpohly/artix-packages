@@ -1,0 +1,37 @@
+# $Id$
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
+# Contributor:  <mathieu.clabaut@gmail.com>
+
+pkgname=xdg-user-dirs
+pkgver=0.16
+pkgrel=1
+pkgdesc="Manage user directories like ~/Desktop and ~/Music"
+arch=(i686 x86_64)
+url="http://www.freedesktop.org/wiki/Software/xdg-user-dirs"
+license=(GPL)
+depends=(sh)
+makedepends=(docbook-xsl git)
+backup=(etc/xdg/user-dirs.conf etc/xdg/user-dirs.defaults)
+# install=xdg-user-dirs.install
+source=(http://user-dirs.freedesktop.org/releases/$pkgname-$pkgver.tar.gz
+        xdg-user-dirs)
+sha256sums=('770fb42c8809d192c661585a0ee9ed9b65ebaca7532abe7dd68eca0e4962e3e6'
+            'f0f27de23d849b2fa4ebf59e448b5a843b577d14dc2c1070e228999091fa7f5e')
+
+# prepare() {
+#   cd $pkgname
+#   NOCONFIGURE=1 ./autogen.sh
+# }
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -D ../xdg-user-dirs "$pkgdir/etc/X11/xinit/xinitrc.d/xdg-user-dirs"
+}

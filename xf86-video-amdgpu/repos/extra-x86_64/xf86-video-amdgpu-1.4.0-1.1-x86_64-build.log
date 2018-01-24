@@ -1,0 +1,202 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for gcc option to accept ISO C99... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether __clang__ is declared... no
+checking whether __INTEL_COMPILER is declared... no
+checking whether __SUNPRO_C is declared... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for a sed that does not truncate output... /usr/bin/sed
+checking if gcc supports -Werror=unknown-warning-option... no
+checking if gcc supports -Werror=unused-command-line-argument... no
+checking if gcc supports -Wall... yes
+checking if gcc supports -Wpointer-arith... yes
+checking if gcc supports -Wmissing-declarations... yes
+checking if gcc supports -Wformat=2... yes
+checking if gcc supports -Wstrict-prototypes... yes
+checking if gcc supports -Wmissing-prototypes... yes
+checking if gcc supports -Wnested-externs... yes
+checking if gcc supports -Wbad-function-cast... yes
+checking if gcc supports -Wold-style-definition... yes
+checking if gcc supports -Wdeclaration-after-statement... yes
+checking if gcc supports -Wunused... yes
+checking if gcc supports -Wuninitialized... yes
+checking if gcc supports -Wshadow... yes
+checking if gcc supports -Wmissing-noreturn... yes
+checking if gcc supports -Wmissing-format-attribute... yes
+checking if gcc supports -Wredundant-decls... yes
+checking if gcc supports -Wlogical-op... yes
+checking if gcc supports -Werror=implicit... yes
+checking if gcc supports -Werror=nonnull... yes
+checking if gcc supports -Werror=init-self... yes
+checking if gcc supports -Werror=main... yes
+checking if gcc supports -Werror=missing-braces... yes
+checking if gcc supports -Werror=sequence-point... yes
+checking if gcc supports -Werror=return-type... yes
+checking if gcc supports -Werror=trigraphs... yes
+checking if gcc supports -Werror=array-bounds... yes
+checking if gcc supports -Werror=write-strings... yes
+checking if gcc supports -Werror=address... yes
+checking if gcc supports -Werror=int-to-pointer-cast... yes
+checking if gcc supports -Werror=pointer-to-int-cast... yes
+checking if gcc supports -pedantic... yes
+checking if gcc supports -Werror... yes
+checking if gcc supports -Werror=attributes... yes
+checking whether make supports nested variables... (cached) yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking if RANDR is defined... yes
+checking if RENDER is defined... yes
+checking if XV is defined... yes
+checking if DPMSExtension is defined... yes
+checking for LIBDRM... yes
+checking for LIBDRM_AMDGPU... yes
+checking for GBM... yes
+checking for XORG... yes
+checking for XEXT... yes
+checking for LIBUDEV... yes
+checking whether to include GLAMOR support... checking for glamor.h... yes
+checking whether GLAMOR_NO_DRI3 is declared... yes
+checking whether glamor_glyphs_init is declared... no
+checking whether glamor_egl_destroy_textured_pixmap is declared... no
+checking whether glamor_finish is declared... yes
+checking whether RegionDuplicate is declared... yes
+checking whether fbGlyphs is declared... yes
+checking whether xf86CursorResetCursor is declared... yes
+checking whether GBM_BO_USE_LINEAR is declared... yes
+checking for misyncshm.h... yes
+checking for present.h... yes
+checking for dri3.h... yes
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking sys/endian.h usability... no
+checking sys/endian.h presence... no
+checking for sys/endian.h... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating man/Makefile
+config.status: creating conf/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+        prefix:              /usr
+        exec_prefix:         ${prefix}
+        libdir:              ${exec_prefix}/lib
+        includedir:          ${prefix}/include
+        configdir:           ${prefix}/share/X11/xorg.conf.d
+
+        CFLAGS:              -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt
+        CXXFLAGS:            -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt
+        Macros:              
+
+        Run 'make' to build xf86-video-amdgpu
+
+make  all-recursive
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird betreten
+Making all in src
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird betreten
+  CC       amdgpu_misc.lo
+  CC       amdgpu_video.lo
+  CC       amdgpu_dri2.lo
+  CC       amdgpu_bo_helper.lo
+  CC       amdgpu_probe.lo
+  CC       amdgpu_dri3.lo
+  CC       amdgpu_drm_queue.lo
+  CC       amdgpu_kms.lo
+  CC       amdgpu_present.lo
+  CC       amdgpu_sync.lo
+  CC       drmmode_display.lo
+  CC       amdgpu_glamor.lo
+  CC       amdgpu_glamor_wrappers.lo
+  CC       amdgpu_pixmap.lo
+  CCLD     amdgpu_drv.la
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/src“ wird verlassen
+Making all in man
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird betreten
+  GEN      amdgpu.4
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/man“ wird verlassen
+Making all in conf
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird betreten
+make[2]: Für das Ziel „all“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0/conf“ wird verlassen
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird betreten
+make[2]: Für das Ziel „all-am“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird verlassen
+make[1]: Verzeichnis „/build/xf86-video-amdgpu/src/xf86-video-amdgpu-1.4.0“ wird verlassen

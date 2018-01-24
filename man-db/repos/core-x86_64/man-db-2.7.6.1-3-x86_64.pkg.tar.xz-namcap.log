@@ -1,0 +1,8 @@
+man-db W: Potential non-FHS man page (usr/bin/man) found.
+man-db W: Referenced library 'libman-2.7.6.1.so' is an uninstalled dependency
+man-db W: Referenced library 'libmandb-2.7.6.1.so' is an uninstalled dependency
+man-db W: Dependency bash included but already satisfied
+man-db W: Dependency gdbm included but already satisfied
+man-db W: Dependency zlib included but already satisfied
+man-db W: Dependency included and not needed ('groff')
+man-db W: Dependency included and not needed ('less')

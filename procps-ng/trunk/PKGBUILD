@@ -1,0 +1,56 @@
+# $Id$
+# Maintainer: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=procps-ng
+pkgver=3.3.12
+pkgrel=2
+pkgdesc='Utilities for monitoring your system and its processes'
+url='https://gitlab.com/procps-ng/procps'
+license=('GPL' 'LGPL')
+arch=('i686' 'x86_64')
+makedepends=('eudev')
+depends=('ncurses' 'libeudev' 'libelogind')
+source=("http://downloads.sourceforge.net/project/${pkgname}/Production/${pkgname}-${pkgver}.tar.xz"
+        'procps-enable-elogind.patch')
+sha256sums=('6ed65ab86318f37904e8f9014415a098bec5bc53653e5d9ab404f95ca5e1a7d4'
+            'c6a851c42a9aa8443d7329c542ce90f78ecc072ed5c6106fc88534762dd091b6')
+
+groups=('base')
+
+conflicts=('procps' 'sysvinit-tools')
+provides=('procps' 'sysvinit-tools')
+replaces=('procps' 'sysvinit-tools')
+
+install=install
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	sed 's:<ncursesw/:<:g' -i watch.c
+	patch -Np 1 -i ${srcdir}/procps-enable-elogind.patch
+	autoreconf -fi
+}
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure \
+		--prefix=/usr \
+		--exec-prefix=/ \
+		--sysconfdir=/etc \
+		--libdir=/usr/lib \
+		--bindir=/usr/bin \
+		--sbindir=/usr/bin \
+		--enable-watch8bit \
+		--without-systemd \
+		 --with-elogind \
+		--disable-kill \
+
+	# kill is provided by util-linux
+
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}

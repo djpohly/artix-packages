@@ -1,0 +1,1308 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+configure: System-wide cache files will be owned by root
+configure: Man will not be installed setuid
+configure: Using GNU hierarchy organization(s)
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for Minix Amsterdam compiler... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for gcc option to accept ISO C99... none needed
+checking for gcc option to accept ISO Standard C... (cached) none needed
+checking how to run the C preprocessor... gcc -E
+checking whether C compiler handles -Werror -Wunknown-warning-option... no
+checking whether C compiler handles -W... yes
+checking whether C compiler handles -Wpointer-arith... yes
+checking whether C compiler handles -Wwrite-strings... yes
+checking whether C compiler handles -Wstrict-prototypes... yes
+checking whether C compiler handles -Wshadow... yes
+checking whether C compiler handles -Wformat-security... yes
+checking whether C compiler handles -Wredundant-decls... yes
+checking whether C compiler handles -Wno-missing-field-initializers... yes
+checking whether ln -s works... yes
+checking for cat... cat
+checking for www-browser... no
+checking for lynx... no
+checking for elinks... no
+checking for w3m... no
+checking for tr... tr
+checking for grep... grep
+checking for pager... no
+checking for less... less
+checking for nroff... nroff
+checking whether nroff is GNU nroff... yes
+checking for appropriate nroff macro... -mandoc
+checking for groff... groff
+checking for appropriate groff options... -mandoc
+checking whether nroff supports warning control... yes
+checking for gpreconv... no
+checking for preconv... preconv
+checking for groff with Debian multibyte patch or real Unicode support... yes
+checking for eqn... eqn
+checking for neqn... neqn
+checking for tbl... tbl
+checking whether tbl supports the 'x' format character... yes
+checking for col... col
+checking for vgrind... no
+checking for gvgrind... no
+checking for refer... refer
+checking for grap... no
+checking for pic... pic
+checking for gzip... gzip
+checking for compress... no
+checking for bzip2... bzip2
+checking for xz... xz
+checking for lzip... no
+checking for gzopen in -lz... yes
+checking for library containing strerror... none required
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for inline... inline
+checking for C/C++ restrict keyword... __restrict
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking for flockfile... yes
+checking for funlockfile... yes
+checking for btowc... yes
+checking for canonicalize_file_name... yes
+checking for realpath... yes
+checking for getcwd... yes
+checking for readlink... yes
+checking for _set_invalid_parameter_handler... no
+checking for fchdir... yes
+checking for fcntl... yes
+checking for symlink... yes
+checking for fdopendir... yes
+checking for mempcpy... yes
+checking for flock... yes
+checking for isblank... yes
+checking for iswctype... yes
+checking for mbsrtowcs... yes
+checking for wmemchr... yes
+checking for wmemcpy... yes
+checking for wmempcpy... yes
+checking for fstatat... yes
+checking for futimens... yes
+checking for getdelim... yes
+checking for getdtablesize... yes
+checking for getlogin_r... yes
+checking for gettimeofday... yes
+checking for nanotime... no
+checking for getpwnam_r... yes
+checking for getuid... yes
+checking for geteuid... yes
+checking for getresuid... yes
+checking for getgid... yes
+checking for getegid... yes
+checking for getresgid... yes
+checking for setresuid... yes
+checking for setreuid... yes
+checking for seteuid... yes
+checking for setresgid... yes
+checking for setregid... yes
+checking for setegid... yes
+checking for lstat... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for mprotect... yes
+checking for mkstemp... yes
+checking for nl_langinfo... yes
+checking for openat... yes
+checking for link... yes
+checking for pathconf... yes
+checking for secure_getenv... yes
+checking for setenv... yes
+checking for sigaction... yes
+checking for sigaltstack... yes
+checking for siginterrupt... yes
+checking for sleep... yes
+checking for strdup... yes
+checking for strndup... yes
+checking for pipe... yes
+checking for futimes... yes
+checking for futimesat... yes
+checking for utimensat... yes
+checking for lutimes... yes
+checking for vasnprintf... no
+checking for snprintf... yes
+checking for wcrtomb... yes
+checking for iswcntrl... yes
+checking features.h usability... yes
+checking features.h presence... yes
+checking for features.h... yes
+checking linewrap.h usability... no
+checking linewrap.h presence... no
+checking for linewrap.h... no
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for unistd.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking for sys/stat.h... (cached) yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/cdefs.h usability... yes
+checking sys/cdefs.h presence... yes
+checking for sys/cdefs.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking xlocale.h usability... no
+checking xlocale.h presence... no
+checking for xlocale.h... no
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for nl_langinfo and CODESET... yes
+checking for a traditional french locale... none
+checking whether // is distinct from /... no
+checking whether realpath works... yes
+checking whether the preprocessor supports include_next... yes
+checking whether system header files limit the line length... no
+checking if environ is properly declared... yes
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking whether fchdir is declared... yes
+checking for working fcntl.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for mbstate_t... yes
+checking whether stat file-mode macros are broken... no
+checking for nlink_t... yes
+checking whether fchmodat is declared without a macro... yes
+checking whether fstat is declared without a macro... yes
+checking whether fstatat is declared without a macro... yes
+checking whether futimens is declared without a macro... yes
+checking whether lchmod is declared without a macro... yes
+checking whether lstat is declared without a macro... yes
+checking whether mkdirat is declared without a macro... yes
+checking whether mkfifo is declared without a macro... yes
+checking whether mkfifoat is declared without a macro... yes
+checking whether mknod is declared without a macro... yes
+checking whether mknodat is declared without a macro... yes
+checking whether stat is declared without a macro... yes
+checking whether utimensat is declared without a macro... yes
+checking whether lstat correctly handles trailing slash... yes
+checking whether getcwd (NULL, 0) allocates memory for result... yes
+checking for getcwd with POSIX signature... yes
+checking whether getcwd is declared... yes
+checking whether getdelim is declared... yes
+checking whether getline is declared... yes
+checking whether getlogin_r is declared... yes
+checking whether getlogin is declared... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... yes
+checking whether getenv is declared... yes
+checking for struct timeval... yes
+checking for wide-enough struct timeval.tv_sec member... yes
+checking whether gettimeofday is declared without a macro... yes
+checking whether <sys/socket.h> is self-contained... yes
+checking for shutdown... yes
+checking whether <sys/socket.h> defines the SHUT_* macros... yes
+checking for struct sockaddr_storage... yes
+checking for sa_family_t... yes
+checking for struct sockaddr_storage.ss_family... yes
+checking whether socket is declared without a macro... yes
+checking whether connect is declared without a macro... yes
+checking whether accept is declared without a macro... yes
+checking whether bind is declared without a macro... yes
+checking whether getpeername is declared without a macro... yes
+checking whether getsockname is declared without a macro... yes
+checking whether getsockopt is declared without a macro... yes
+checking whether listen is declared without a macro... yes
+checking whether recv is declared without a macro... yes
+checking whether send is declared without a macro... yes
+checking whether recvfrom is declared without a macro... yes
+checking whether sendto is declared without a macro... yes
+checking whether setsockopt is declared without a macro... yes
+checking whether shutdown is declared without a macro... yes
+checking whether accept4 is declared without a macro... yes
+checking whether we are using the GNU C Library >= 2.1 or uClibc... yes
+checking for wchar_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking for ld used by gcc... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether imported symbols can be declared weak... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_kill in -lpthread... yes
+checking for multithread API to use... posix
+checking whether malloc, realloc, calloc are POSIX compliant... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for unsigned long long int... yes
+checking for long long int... yes
+checking for a traditional japanese locale... none
+checking for a transitional chinese locale... none
+checking for a french Unicode locale... none
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking whether memrchr is declared... yes
+checking whether <limits.h> defines MIN and MAX... no
+checking whether <sys/param.h> defines MIN and MAX... yes
+checking whether <sys/select.h> is self-contained... yes
+checking whether pselect is declared without a macro... yes
+checking whether select is declared without a macro... yes
+checking for library containing setsockopt... none needed
+checking whether select supports a 0 argument... yes
+checking whether select detects invalid fds... yes
+checking whether C symbols are prefixed with underscore at the linker level... no
+checking for promoted mode_t type... mode_t
+checking for sigset_t... yes
+checking whether alarm is declared... yes
+checking for long file names... yes
+checking whether setenv is declared... yes
+checking search.h usability... yes
+checking search.h presence... yes
+checking for search.h... yes
+checking for tsearch... yes
+checking for uid_t in sys/types.h... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether stdint.h conforms to C99... yes
+checking for strcasestr... yes
+checking whether strcasestr works... yes
+checking whether strdup is declared... yes
+checking whether strerror(0) succeeds... yes
+checking whether ffsl is declared without a macro... yes
+checking whether ffsll is declared without a macro... yes
+checking whether memmem is declared without a macro... yes
+checking whether mempcpy is declared without a macro... yes
+checking whether memrchr is declared without a macro... yes
+checking whether rawmemchr is declared without a macro... yes
+checking whether stpcpy is declared without a macro... yes
+checking whether stpncpy is declared without a macro... yes
+checking whether strchrnul is declared without a macro... yes
+checking whether strdup is declared without a macro... yes
+checking whether strncat is declared without a macro... yes
+checking whether strndup is declared without a macro... yes
+checking whether strnlen is declared without a macro... yes
+checking whether strpbrk is declared without a macro... yes
+checking whether strsep is declared without a macro... yes
+checking whether strcasestr is declared without a macro... yes
+checking whether strtok_r is declared without a macro... yes
+checking whether strerror_r is declared without a macro... yes
+checking whether strsignal is declared without a macro... yes
+checking whether strverscmp is declared without a macro... yes
+checking whether ffs is declared without a macro... yes
+checking whether strcasecmp is declared without a macro... yes
+checking whether strncasecmp is declared without a macro... yes
+checking whether strndup is declared... (cached) yes
+checking whether strnlen is declared... (cached) yes
+checking for struct timespec in <time.h>... yes
+checking whether unsetenv is declared... yes
+checking whether the utimes function works... yes
+checking for struct utimbuf... yes
+checking for wint_t... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking whether snprintf returns a byte count as in C99... yes
+checking for snprintf... (cached) yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... (cached) yes
+checking whether _snprintf is declared... no
+checking whether vsnprintf is declared... yes
+checking for alloca as a compiler built-in... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking whether program_invocation_name is defined... yes
+checking whether program_invocation_short_name is defined... yes
+checking whether btowc(0) is correct... yes
+checking whether btowc(EOF) is correct... guessing yes
+checking whether this system has an arbitrary file name length limit... yes
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking for closedir... yes
+checking for d_ino member in directory struct... yes
+checking for d_type member in directory struct... yes
+checking whether alphasort is declared without a macro... yes
+checking whether closedir is declared without a macro... yes
+checking whether dirfd is declared without a macro... yes
+checking whether fdopendir is declared without a macro... yes
+checking whether opendir is declared without a macro... yes
+checking whether readdir is declared without a macro... yes
+checking whether rewinddir is declared without a macro... yes
+checking whether scandir is declared without a macro... yes
+checking for dirfd... yes
+checking whether dirfd is declared... (cached) yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... (cached) no
+checking whether dup2 works... yes
+checking for error_at_line... yes
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... needs runtime check
+checking whether fcntl is declared without a macro... yes
+checking whether openat is declared without a macro... yes
+checking whether fdopendir is declared... (cached) yes
+checking whether fdopendir works... yes
+checking whether conversion from 'int' to 'long double' works... yes
+checking for working GNU fnmatch... yes
+checking whether fstatat (..., 0) works... yes
+checking whether futimens works... needs runtime check
+checking whether getcwd handles long file names properly... yes
+checking for getpagesize... yes
+checking whether getcwd aborts when 4k < cwd_length < 16k... no
+checking for working getdelim function... yes
+checking whether getdtablesize works... yes
+checking for getline... yes
+checking for working getline function... yes
+checking whether getlogin_r works with small buffers... yes
+checking whether gettimeofday clobbers localtime buffer... no
+checking for gettimeofday with POSIX signature... almost
+checking glob.h usability... yes
+checking glob.h presence... yes
+checking for glob.h... yes
+checking for GNU glob interface version 1... yes
+checking whether glob lists broken symlinks... no
+checking for ioctl... yes
+checking for ioctl with POSIX signature... no
+checking whether langinfo.h defines CODESET... yes
+checking whether langinfo.h defines T_FMT_AMPM... yes
+checking whether langinfo.h defines ERA... yes
+checking whether langinfo.h defines YESEXPR... yes
+checking whether nl_langinfo is declared without a macro... yes
+checking for C compiler flag to ignore unused libraries... -Wl,--as-needed
+checking whether locale.h conforms to POSIX:2001... yes
+checking whether struct lconv is properly defined... yes
+checking whether setlocale is declared without a macro... yes
+checking whether duplocale is declared without a macro... yes
+checking for pthread_rwlock_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbsrtowcs works... guessing yes
+checking for mempcpy... (cached) yes
+checking for memrchr... yes
+checking for mkdtemp... yes
+checking for working mkstemp... yes
+checking for library containing nanosleep... none required
+checking for working nanosleep... no (mishandles large arguments)
+checking whether YESEXPR works... yes
+checking whether open recognizes a trailing slash... yes
+checking for opendir... yes
+checking for raise... yes
+checking for sigprocmask... yes
+checking for rawmemchr... yes
+checking for readdir... yes
+checking whether readlink signature is correct... yes
+checking whether readlink handles trailing slash correctly... yes
+checking for working re_compile_pattern... yes
+checking whether rename honors trailing slash on destination... yes
+checking whether rename honors trailing slash on source... yes
+checking whether rename manages hard links correctly... yes
+checking whether rename manages existing destinations correctly... yes
+checking for rewinddir... yes
+checking whether rmdir works... yes
+checking whether select supports a 0 argument... (cached) yes
+checking whether select detects invalid fds... (cached) yes
+checking whether setenv validates arguments... yes
+checking for struct sigaction.sa_sigaction... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... yes
+checking whether pthread_sigmask is declared without a macro... yes
+checking whether sigaction is declared without a macro... yes
+checking whether sigaddset is declared without a macro... yes
+checking whether sigdelset is declared without a macro... yes
+checking whether sigemptyset is declared without a macro... yes
+checking whether sigfillset is declared without a macro... yes
+checking whether sigismember is declared without a macro... yes
+checking whether sigpending is declared without a macro... yes
+checking whether sigprocmask is declared without a macro... yes
+checking for sigprocmask... (cached) yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking whether sleep is declared... yes
+checking for working sleep... yes
+checking for library containing setsockopt... (cached) none needed
+checking for socklen_t... yes
+checking for ssize_t... yes
+checking whether stat handles trailing slashes on directories... yes
+checking whether stat handles trailing slashes on files... yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for working stdalign.h... yes
+checking for va_copy... yes
+checking whether NULL can be used in arbitrary expressions... (cached) yes
+checking whether dprintf is declared without a macro... yes
+checking whether fpurge is declared without a macro... no
+checking whether fseeko is declared without a macro... yes
+checking whether ftello is declared without a macro... yes
+checking whether getdelim is declared without a macro... yes
+checking whether getline is declared without a macro... yes
+checking whether gets is declared without a macro... no
+checking whether pclose is declared without a macro... yes
+checking whether popen is declared without a macro... yes
+checking whether renameat is declared without a macro... yes
+checking whether snprintf is declared without a macro... yes
+checking whether tmpfile is declared without a macro... yes
+checking whether vdprintf is declared without a macro... yes
+checking whether vsnprintf is declared without a macro... yes
+checking whether _Exit is declared without a macro... yes
+checking whether atoll is declared without a macro... yes
+checking whether canonicalize_file_name is declared without a macro... yes
+checking whether getloadavg is declared without a macro... yes
+checking whether getsubopt is declared without a macro... yes
+checking whether grantpt is declared without a macro... yes
+checking whether initstate is declared without a macro... yes
+checking whether initstate_r is declared without a macro... yes
+checking whether mkdtemp is declared without a macro... yes
+checking whether mkostemp is declared without a macro... yes
+checking whether mkostemps is declared without a macro... yes
+checking whether mkstemp is declared without a macro... yes
+checking whether mkstemps is declared without a macro... yes
+checking whether posix_openpt is declared without a macro... yes
+checking whether ptsname is declared without a macro... yes
+checking whether ptsname_r is declared without a macro... yes
+checking whether random is declared without a macro... yes
+checking whether random_r is declared without a macro... yes
+checking whether realpath is declared without a macro... yes
+checking whether rpmatch is declared without a macro... yes
+checking whether secure_getenv is declared without a macro... yes
+checking whether setenv is declared without a macro... yes
+checking whether setstate is declared without a macro... yes
+checking whether setstate_r is declared without a macro... yes
+checking whether srandom is declared without a macro... yes
+checking whether srandom_r is declared without a macro... yes
+checking whether strtod is declared without a macro... yes
+checking whether strtoll is declared without a macro... yes
+checking whether strtoull is declared without a macro... yes
+checking whether unlockpt is declared without a macro... yes
+checking whether unsetenv is declared without a macro... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... (cached) yes
+checking whether strcasestr works in linear time... yes
+checking for strcasestr... (cached) yes
+checking whether strcasestr works... (cached) yes
+checking for strchrnul... yes
+checking whether strchrnul works... yes
+checking for working strerror function... yes
+checking for working strndup... yes
+checking for working strnlen... yes
+checking for strsep... yes
+checking whether flock is declared without a macro... yes
+checking whether <sys/ioctl.h> declares ioctl... yes
+checking whether ioctl is declared without a macro... yes
+checking whether <sys/select.h> is self-contained... (cached) yes
+checking whether pselect is declared without a macro... (cached) yes
+checking whether select is declared without a macro... (cached) yes
+checking whether <sys/socket.h> is self-contained... (cached) yes
+checking for shutdown... (cached) yes
+checking whether <sys/socket.h> defines the SHUT_* macros... (cached) yes
+checking for struct sockaddr_storage... (cached) yes
+checking for sa_family_t... (cached) yes
+checking for struct sockaddr_storage.ss_family... (cached) yes
+checking whether socket is declared without a macro... (cached) yes
+checking whether connect is declared without a macro... (cached) yes
+checking whether accept is declared without a macro... (cached) yes
+checking whether bind is declared without a macro... (cached) yes
+checking whether getpeername is declared without a macro... (cached) yes
+checking whether getsockname is declared without a macro... (cached) yes
+checking whether getsockopt is declared without a macro... (cached) yes
+checking whether listen is declared without a macro... (cached) yes
+checking whether recv is declared without a macro... (cached) yes
+checking whether send is declared without a macro... (cached) yes
+checking whether recvfrom is declared without a macro... (cached) yes
+checking whether sendto is declared without a macro... (cached) yes
+checking whether setsockopt is declared without a macro... (cached) yes
+checking whether shutdown is declared without a macro... (cached) yes
+checking whether accept4 is declared without a macro... (cached) yes
+checking for nlink_t... (cached) yes
+checking whether fchmodat is declared without a macro... (cached) yes
+checking whether fstat is declared without a macro... (cached) yes
+checking whether fstatat is declared without a macro... (cached) yes
+checking whether futimens is declared without a macro... (cached) yes
+checking whether lchmod is declared without a macro... (cached) yes
+checking whether lstat is declared without a macro... (cached) yes
+checking whether mkdirat is declared without a macro... (cached) yes
+checking whether mkfifo is declared without a macro... (cached) yes
+checking whether mkfifoat is declared without a macro... (cached) yes
+checking whether mknod is declared without a macro... (cached) yes
+checking whether mknodat is declared without a macro... (cached) yes
+checking whether stat is declared without a macro... (cached) yes
+checking whether utimensat is declared without a macro... (cached) yes
+checking whether chdir is declared without a macro... yes
+checking whether chown is declared without a macro... yes
+checking whether dup is declared without a macro... yes
+checking whether dup2 is declared without a macro... yes
+checking whether dup3 is declared without a macro... yes
+checking whether environ is declared without a macro... yes
+checking whether euidaccess is declared without a macro... yes
+checking whether faccessat is declared without a macro... yes
+checking whether fchdir is declared without a macro... yes
+checking whether fchownat is declared without a macro... yes
+checking whether fdatasync is declared without a macro... yes
+checking whether fsync is declared without a macro... yes
+checking whether ftruncate is declared without a macro... yes
+checking whether getcwd is declared without a macro... yes
+checking whether getdomainname is declared without a macro... yes
+checking whether getdtablesize is declared without a macro... yes
+checking whether getgroups is declared without a macro... yes
+checking whether gethostname is declared without a macro... yes
+checking whether getlogin is declared without a macro... yes
+checking whether getlogin_r is declared without a macro... yes
+checking whether getpagesize is declared without a macro... yes
+checking whether getusershell is declared without a macro... yes
+checking whether setusershell is declared without a macro... yes
+checking whether endusershell is declared without a macro... yes
+checking whether group_member is declared without a macro... yes
+checking whether isatty is declared without a macro... yes
+checking whether lchown is declared without a macro... yes
+checking whether link is declared without a macro... yes
+checking whether linkat is declared without a macro... yes
+checking whether lseek is declared without a macro... yes
+checking whether pipe is declared without a macro... yes
+checking whether pipe2 is declared without a macro... yes
+checking whether pread is declared without a macro... yes
+checking whether pwrite is declared without a macro... yes
+checking whether readlink is declared without a macro... yes
+checking whether readlinkat is declared without a macro... yes
+checking whether rmdir is declared without a macro... yes
+checking whether sethostname is declared without a macro... yes
+checking whether sleep is declared without a macro... yes
+checking whether symlink is declared without a macro... yes
+checking whether symlinkat is declared without a macro... yes
+checking whether ttyname_r is declared without a macro... yes
+checking whether unlink is declared without a macro... yes
+checking whether unlinkat is declared without a macro... yes
+checking whether usleep is declared without a macro... yes
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking whether unsetenv obeys POSIX... yes
+checking for ptrdiff_t... yes
+checking for vasprintf... yes
+checking for vsnprintf... yes
+checking whether snprintf respects a size of 1... yes
+checking whether printf supports POSIX/XSI format strings with positions... yes
+checking whether btowc is declared without a macro... yes
+checking whether wctob is declared without a macro... yes
+checking whether mbsinit is declared without a macro... yes
+checking whether mbrtowc is declared without a macro... yes
+checking whether mbrlen is declared without a macro... yes
+checking whether mbsrtowcs is declared without a macro... yes
+checking whether mbsnrtowcs is declared without a macro... yes
+checking whether wcrtomb is declared without a macro... yes
+checking whether wcsrtombs is declared without a macro... yes
+checking whether wcsnrtombs is declared without a macro... yes
+checking whether wcwidth is declared without a macro... yes
+checking whether wmemchr is declared without a macro... yes
+checking whether wmemcmp is declared without a macro... yes
+checking whether wmemcpy is declared without a macro... yes
+checking whether wmemmove is declared without a macro... yes
+checking whether wmemset is declared without a macro... yes
+checking whether wcslen is declared without a macro... yes
+checking whether wcsnlen is declared without a macro... yes
+checking whether wcscpy is declared without a macro... yes
+checking whether wcpcpy is declared without a macro... yes
+checking whether wcsncpy is declared without a macro... yes
+checking whether wcpncpy is declared without a macro... yes
+checking whether wcscat is declared without a macro... yes
+checking whether wcsncat is declared without a macro... yes
+checking whether wcscmp is declared without a macro... yes
+checking whether wcsncmp is declared without a macro... yes
+checking whether wcscasecmp is declared without a macro... yes
+checking whether wcsncasecmp is declared without a macro... yes
+checking whether wcscoll is declared without a macro... yes
+checking whether wcsxfrm is declared without a macro... yes
+checking whether wcsdup is declared without a macro... yes
+checking whether wcschr is declared without a macro... yes
+checking whether wcsrchr is declared without a macro... yes
+checking whether wcscspn is declared without a macro... yes
+checking whether wcsspn is declared without a macro... yes
+checking whether wcspbrk is declared without a macro... yes
+checking whether wcsstr is declared without a macro... yes
+checking whether wcstok is declared without a macro... yes
+checking whether wcswidth is declared without a macro... yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether wcrtomb return value is correct... guessing yes
+checking whether iswcntrl works... yes
+checking for towlower... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking whether wctype is declared without a macro... yes
+checking whether iswctype is declared without a macro... yes
+checking whether wctrans is declared without a macro... yes
+checking whether towctrans is declared without a macro... yes
+checking for stdint.h... (cached) yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for sys/file.h... (cached) yes
+checking linux/fiemap.h usability... yes
+checking linux/fiemap.h presence... yes
+checking for linux/fiemap.h... yes
+checking for lchown... yes
+checking for posix_fadvise... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for iconv... yes
+checking for working iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for po4a... po4a
+checking for an ANSI C-conforming const... yes
+checking for inline... (cached) inline
+checking for pid_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for size_t... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libpipeline... yes
+checking gdbm.h usability... yes
+checking gdbm.h presence... yes
+checking for gdbm.h... yes
+checking for gdbm_fetch in -lgdbm... yes
+checking for gdbm_exists... yes
+configure: default CC = "gcc"
+configure: default CPP = "gcc -E"
+configure: default CPPFLAGS = "-D_FORTIFY_SOURCE=2"
+configure: default CFLAGS = "-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall"
+configure: default LDFLAGS = "-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
+configure: default LIBS = ""
+configure: default DBLIBS = "-lgdbm"
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating gnulib/lib/Makefile
+config.status: creating init/Makefile
+config.status: creating init/systemd/Makefile
+config.status: creating lib/Makefile
+config.status: creating src/Makefile
+config.status: creating src/man_db.conf
+config.status: creating src/tests/Makefile
+config.status: creating man/Makefile
+config.status: creating man/replace.sin
+config.status: creating man/po4a/Makefile
+config.status: creating man/da/Makefile
+config.status: creating man/de/Makefile
+config.status: creating man/es/Makefile
+config.status: creating man/fr/Makefile
+config.status: creating man/id/Makefile
+config.status: creating man/it/Makefile
+config.status: creating man/ja/Makefile
+config.status: creating man/nl/Makefile
+config.status: creating man/pl/Makefile
+config.status: creating man/ru/Makefile
+config.status: creating man/sv/Makefile
+config.status: creating man/zh_CN/Makefile
+config.status: creating manual/Makefile
+config.status: creating libdb/Makefile
+config.status: creating docs/Makefile
+config.status: creating tools/Makefile
+config.status: creating include/comp_src.h
+config.status: creating include/manconfig.h
+config.status: creating po/Makefile.in
+config.status: creating gnulib/po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: creating gnulib/po/POTFILES
+config.status: creating gnulib/po/Makefile
+make  all-recursive
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird betreten
+Making all in docs
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/docs“ wird betreten
+make[2]: Für das Ziel „all“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/docs“ wird verlassen
+Making all in gnulib/lib
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+  GEN      alloca.h
+  GEN      configmake.h
+  GEN      c++defs.h
+  GEN      arg-nonnull.h
+  GEN      warn-on-use.h
+  GEN      sys/types.h
+  GEN      sys/uio.h
+  GEN      fcntl.h
+  GEN      getopt.h
+  GEN      dirent.h
+  GEN      glob.h
+  GEN      langinfo.h
+  GEN      signal.h
+  GEN      locale.h
+  GEN      stdlib.h
+  GEN      stdio.h
+  GEN      string.h
+  GEN      strings.h
+  GEN      sys/file.h
+  GEN      sys/ioctl.h
+  GEN      sys/select.h
+  GEN      sys/socket.h
+  GEN      sys/time.h
+  GEN      time.h
+  GEN      wchar.h
+  GEN      sys/stat.h
+  GEN      unistd.h
+  GEN      wctype.h
+make  all-recursive
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird betreten
+  CC       argp-eexst.lo
+  CC       areadlink-with-size.lo
+  CC       argp-ba.lo
+  CC       argp-fmtstream.lo
+  CC       argp-fs-xinl.lo
+  CC       argp-help.lo
+  CC       argp-parse.lo
+  CC       argp-pin.lo
+  CC       argp-pv.lo
+  CC       argp-pvh.lo
+  CC       argp-xinl.lo
+  CC       bitrotate.lo
+  CC       canonicalize.lo
+  CC       cloexec.lo
+  CC       dirname.lo
+  CC       basename.lo
+  CC       dirname-lgpl.lo
+  CC       basename-lgpl.lo
+  CC       stripslash.lo
+  CC       exitfail.lo
+  CC       fd-hook.lo
+  CC       file-set.lo
+  CC       filenamecat-lgpl.lo
+  CC       gettime.lo
+  CC       hash.lo
+  CC       hash-pjw.lo
+  CC       hash-triple.lo
+  CC       idpriv-drop.lo
+  CC       idpriv-droptemp.lo
+  CC       localcharset.lo
+  CC       malloca.lo
+  CC       nonblocking.lo
+  CC       openat-die.lo
+  CC       same.lo
+  CC       save-cwd.lo
+  CC       sig-handler.lo
+  CC       sockets.lo
+  CC       stat-time.lo
+  CC       strnlen1.lo
+  CC       sys_socket.lo
+  CC       tempname.lo
+  CC       glthread/threadlib.lo
+  CC       timespec.lo
+  CC       unistd.lo
+  CC       dup-safer.lo
+  CC       fd-safer.lo
+  CC       pipe-safer.lo
+  CC       utimens.lo
+  CC       wctype-h.lo
+  CC       xmalloc.lo
+  CC       xalloc-die.lo
+  CC       xgetcwd.lo
+  CC       xsize.lo
+  CC       xstrndup.lo
+  CC       xvasprintf.lo
+  CC       xasprintf.lo
+  CC       asnprintf.lo
+  CC       chdir-long.lo
+  CC       fcntl.lo
+  CC       futimens.lo
+  CC       getopt.lo
+  CC       getopt1.lo
+  CC       glob.lo
+  CC       ioctl.lo
+  CC       nanosleep.lo
+  CC       openat-proc.lo
+  CC       printf-args.lo
+  CC       printf-parse.lo
+  CC       vasnprintf.lo
+  GEN      charset.alias
+  GEN      ref-add.sed
+  GEN      ref-del.sed
+  CC       glthread/lock.lo
+  CCLD     libgnu.la
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[4]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/lib“ wird verlassen
+Making all in gnulib/po
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/po“ wird betreten
+make[2]: Für das Ziel „all“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/gnulib/po“ wird verlassen
+Making all in init
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird betreten
+Making all in systemd
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init/systemd“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init/systemd“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird betreten
+make[3]: Für das Ziel „all-am“ ist nichts zu tun.
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/init“ wird verlassen
+Making all in lib
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/lib“ wird betreten
+  CC       libman_la-debug.lo
+  CC       libman_la-appendstr.lo
+  CC       libman_la-cleanup.lo
+  CC       libman_la-decompress.lo
+  CC       libman_la-encodings.lo
+  CC       libman_la-hashtable.lo
+  CC       libman_la-linelength.lo
+  CC       libman_la-lower.lo
+  CC       libman_la-orderfiles.lo
+  CC       libman_la-pathsearch.lo
+  CC       libman_la-security.lo
+  CC       libman_la-tempfile.lo
+  CC       libman_la-util.lo
+  CC       libman_la-wordfnmatch.lo
+  CC       libman_la-xchown.lo
+  CC       libman_la-xregcomp.lo
+  CCLD     libman.la
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/lib“ wird verlassen
+Making all in libdb
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/libdb“ wird betreten
+  CC       libmandb_la-db_gdbm.lo
+  CC       libmandb_la-db_btree.lo
+  CC       libmandb_la-db_delete.lo
+  CC       libmandb_la-db_lookup.lo
+  CC       libmandb_la-db_ndbm.lo
+  CC       libmandb_la-db_store.lo
+  CC       libmandb_la-db_ver.lo
+  CCLD     libmandb.la
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/libdb“ wird verlassen
+Making all in src
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird betreten
+Making all in .
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird betreten
+  CC       catman.o
+  CC       globbing.o
+  CC       manp.o
+  CC       compression.o
+  CC       descriptions.o
+  CC       filenames.o
+  CC       lexgrog.o
+  CC       lexgrog_test.o
+  CC       manconv.o
+  CC       manconv_client.o
+  CC       ult_src.o
+  CC       man.o
+  CC       zsoelim.o
+  CC       check_mandirs.o
+  CC       descriptions_store.o
+  CC       mandb.o
+  CC       straycats.o
+  CC       manpath.o
+  CC       whatis.o
+  CC       globbing_test.o
+  CC       manconv_main.o
+  CC       zsoelim_main.o
+  CC       accessdb.o
+  CCLD     catman
+  CCLD     manpath
+  CCLD     globbing
+  CCLD     lexgrog
+  CCLD     mandb
+  CCLD     manconv
+  CCLD     zsoelim
+  CCLD     accessdb
+  CCLD     whatis
+rm -f apropos
+ln -s whatis apropos
+  CCLD     man
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird verlassen
+Making all in tests
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src/tests“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/src“ wird verlassen
+Making all in man
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+Making all in po4a
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/po4a“ wird betreten
+rm -rf ./tmp-po
+/usr/bin/mkdir -p ./tmp-po
+set -e; for f in po/man-db-manpages.pot po/da.po po/de.po po/fr.po po/id.po po/ja.po po/nl.po po/pl.po po/ru.po po/sv.po po/zh_CN.po; do \
+	base=`basename $f`; \
+	cp -p ./$f ./tmp-po/; \
+	chmod u+w ./tmp-po/$base; \
+done
+PERL5LIB=. po4a --variable srcdir=../../man --variable builddir=../../man --variable podir=./tmp-po --keep 0 ./po4a.cfg
+ (390 entries)
+rm -rf ./tmp-po
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/po4a“ wird verlassen
+Making all in es
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird betreten
+  GEN      replace.sed
+  GEN      man1/man.1
+  GEN      man1/manpath.1
+  GEN      man1/apropos.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/es“ wird verlassen
+Making all in it
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird betreten
+  GEN      replace.sed
+  GEN      man1/man.1
+  GEN      man1/apropos.1
+  GEN      man1/manpath.1
+  GEN      man5/manpath.5
+  GEN      man1/whatis.1
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man1/zsoelim.1
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/it“ wird verlassen
+Making all in da
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird betreten
+  GEN      replace.sed
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/apropos.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/da“ wird verlassen
+Making all in de
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/de“ wird verlassen
+Making all in fr
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird betreten
+  GEN      replace.sed
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/apropos.1
+  GEN      man1/manconv.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man1/manpath.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/mandb.8
+  GEN      man8/catman.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/fr“ wird verlassen
+Making all in id
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/id“ wird verlassen
+Making all in ja
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird betreten
+  GEN      replace.sed
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/apropos.1
+  GEN      man1/manpath.1
+  GEN      man1/manconv.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ja“ wird verlassen
+Making all in nl
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/manconv.1
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/nl“ wird verlassen
+Making all in pl
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man1/whatis.1
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/pl“ wird verlassen
+Making all in ru
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/man.1
+  GEN      man1/lexgrog.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/ru“ wird verlassen
+Making all in sv
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird betreten
+  GEN      replace.sed
+  GEN      man1/lexgrog.1
+  GEN      man1/apropos.1
+  GEN      man1/man.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/whatis.1
+  GEN      man1/zsoelim.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/sv“ wird verlassen
+Making all in zh_CN
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird betreten
+  GEN      replace.sed
+  GEN      man1/lexgrog.1
+  GEN      man1/apropos.1
+  GEN      man1/man.1
+  GEN      man1/manpath.1
+  GEN      man1/manconv.1
+  GEN      man1/zsoelim.1
+  GEN      man1/whatis.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/mandb.8
+  GEN      man8/catman.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man/zh_CN“ wird verlassen
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird betreten
+  GEN      replace.sed
+  GEN      man1/apropos.1
+  GEN      man1/lexgrog.1
+  GEN      man1/man.1
+  GEN      man1/manconv.1
+  GEN      man1/manpath.1
+  GEN      man1/zsoelim.1
+  GEN      man1/whatis.1
+  GEN      man5/manpath.5
+  GEN      man8/accessdb.8
+  GEN      man8/catman.8
+  GEN      man8/mandb.8
+make[3]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/man“ wird verlassen
+Making all in manual
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/manual“ wird betreten
+echo '.ds V 2.7.6.1' > version
+soelim -I. man_db.me | tbl > man_db.pp
+LC_ALL=C nroff -me man_db.pp > man_db.cat
+groff -me -Tps man_db.pp > man_db.ps
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/manual“ wird verlassen
+Making all in po
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/po“ wird betreten
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/po“ wird verlassen
+Making all in tools
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/tools“ wird betreten
+make[2]: Für das Ziel „all“ ist nichts zu tun.
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1/tools“ wird verlassen
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird betreten
+make[2]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird verlassen
+make[1]: Verzeichnis „/build/man-db/src/man-db-2.7.6.1“ wird verlassen

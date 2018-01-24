@@ -1,0 +1,21 @@
+# Maintainer: artoo <artoo@cromnix.org>
+
+_pkgname=iso-profiles
+
+pkgname=artix-iso-profiles
+pkgver=0.6
+pkgrel=1
+arch=('any')
+pkgdesc='Artix desktop iso profiles'
+license=('GPL')
+url='https://github.com/artix-linux/iso-profiles'
+groups=('artools')
+depends=("artools-iso")
+makedepends=('git')
+source=("${_pkgname}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('465b1c263fd3c7e137a9f60f6becc1bf256a2dde6661a32a81207733361ed39b')
+
+package() {
+    cd ${_pkgname}-${pkgver}
+    make PREFIX=/usr DESTDIR=${pkgdir} install_profiles
+}

@@ -1,0 +1,458 @@
+# Maintainer: artoo <artoo@cromnix.org>
+
+_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
+
+_sed_args=(-e 's|/var/run|/run|g')
+prefix=true
+
+$_prefix && _sed_args+=(-e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g')
+
+pkgbase=openrc-system
+pkgname=(
+#         'dbus-openrc'
+#         'cronie-openrc'
+#         'cryptsetup-openrc'
+#         'dhcpcd-openrc'
+#         'device-mapper-openrc'
+#         'glibc-openrc'
+#         'inetutils-openrc'
+#         'lvm2-openrc'
+#         'mdadm-openrc'
+#         'nfs-utils-openrc'
+#         'rpcbind-openrc'
+        'elogind-openrc'
+#         'gpm-openrc'
+#         'hdparm-openrc'
+#         'iptables-openrc'
+#         'krb5-openrc'
+#         'openldap-openrc'
+#         'openssh-openrc'
+#         'openvpn-openrc'
+#         'wpa_supplicant-openrc'
+#         'xinetd-openrc'
+#         'kmod-openrc'
+)
+pkgver=20171002
+pkgrel=1
+pkgdesc="OpenRC init scripts"
+arch=('any')
+url="https://github.com/cromnix/artix"
+license=('GPL2')
+groups=('openrc-system')
+conflicts=('systemd-sysvcompat')
+source=(
+        "cronie.initd::${_url}/sys-process/cronie/files/cronie-1.3-initd"
+        "dmcrypt.confd::${_url}/sys-fs/cryptsetup/files/1.6.7-dmcrypt.confd"
+        "dmcrypt.initd::${_url}/sys-fs/cryptsetup/files/1.6.7-dmcrypt.rc"
+        "nscd.initd::${_url}/sys-libs/glibc/files/nscd"
+        "device-mapper.confd::${_url}/sys-fs/lvm2/files/device-mapper.conf-1.02.22-r3"
+        "device-mapper.initd::${_url}/sys-fs/lvm2/files/device-mapper.rc-2.02.105-r2"
+        "dmeventd.initd::${_url}/sys-fs/lvm2/files/dmeventd.initd-2.02.67-r1"
+        "lvm.confd::${_url}/sys-fs/lvm2/files/lvm.confd-2.02.28-r2"
+        "lvm.initd::${_url}/sys-fs/lvm2/files/lvm.rc-2.02.172"
+        "lvm-monitoring.initd::${_url}/sys-fs/lvm2/files/lvm-monitoring.initd-2.02.105-r2"
+        "lvmetad.initd::${_url}/sys-fs/lvm2/files/lvmetad.initd-2.02.116-r3"
+#         "lvmlockd.initd::${_url}/sys-fs/lvm2/files/lvmlockd.initd-2.02.166-r1"
+        "mdadm.confd::${_url}/sys-fs/mdadm/files/mdadm.confd"
+        "mdadm.initd::${_url}/sys-fs/mdadm/files/mdadm.rc"
+        "mdraid.confd::${_url}/sys-fs/mdadm/files/mdraid.confd"
+        "mdraid.initd::${_url}/sys-fs/mdadm/files/mdraid.rc"
+        "dhcpcd.initd::${_url}/net-misc/dhcpcd/files/dhcpcd.initd"
+        "dbus.initd::${_url}/sys-apps/dbus/files/dbus.initd-r1"
+        'ftpd.confd'
+        'ftpd.initd'
+        "nfs.confd::${_url}/net-fs/nfs-utils/files/nfs.confd"
+        "nfs.initd::${_url}/net-fs/nfs-utils/files/nfs.initd"
+        "nfsclient.confd::${_url}/net-fs/nfs-utils/files/nfsclient.confd"
+        "nfsclient.initd::${_url}/net-fs/nfs-utils/files/nfsclient.initd"
+        "rpc.idmapd.initd::${_url}/net-fs/nfs-utils/files/rpc.idmapd.initd"
+        "rpc.pipefs.initd::${_url}/net-fs/nfs-utils/files/rpc.pipefs.initd"
+        "rpc.gssd.initd::${_url}/net-fs/nfs-utils/files/rpc.gssd.initd"
+        "rpc.svcgssd.initd::${_url}/net-fs/nfs-utils/files/rpc.svcgssd.initd"
+        "rpc.statd.initd::${_url}/net-fs/nfs-utils/files/rpc.statd.initd"
+        "rpc.rquotad.initd::${_url}/sys-fs/quota/files/rpc.rquotad.initd"
+        "rpcbind.confd::${_url}/net-nds/rpcbind/files/rpcbind.confd"
+        "rpcbind.initd::${_url}/net-nds/rpcbind/files/rpcbind.initd"
+        "elogind.confd::${_url}/sys-auth/elogind/files/elogind.conf"
+        "elogind.initd::${_url}/sys-auth/elogind/files/elogind.init"
+        "gpm.confd::${_url}/sys-libs/gpm/files/gpm.conf.d"
+        "gpm.initd::${_url}/sys-libs/gpm/files/gpm.rc6-2"
+        "hdparm.confd::${_url}/sys-apps/hdparm/files/hdparm-conf.d.3"
+        "hdparm.initd::${_url}/sys-apps/hdparm/files/hdparm-init-8"
+        "openvpn.confd::${_url}/net-vpn/openvpn/files/openvpn-2.1.conf"
+        "openvpn.initd::${_url}/net-vpn/openvpn/files/openvpn-2.1.init"
+        "sshd.confd::${_url}/net-misc/openssh/files/sshd.confd"
+        "sshd.initd::${_url}/net-misc/openssh/files/sshd.rc6.4"
+        "slapd.confd::${_url}/net-nds/openldap/files/slapd-confd-2.4.28-r1"
+        "slapd.initd::${_url}/net-nds/openldap/files/slapd-initd-2.4.40-r2"
+        "iptables.confd::${_url}/net-firewall/iptables/files/iptables-1.4.13.confd"
+        "ip6tables.confd::${_url}/net-firewall/iptables/files/ip6tables-1.4.13.confd"
+        "iptables.initd::${_url}/net-firewall/iptables/files/iptables-1.4.13-r1.init"
+        "krb5kadmind.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kadmind.initd-r2"
+        "krb5kdc.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kdc.initd-r2"
+        "krb5kpropd.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kpropd.initd-r2"
+        "wpa_supplicant.confd::${_url}/net-wireless/wpa_supplicant/files/wpa_supplicant-conf.d"
+        "wpa_supplicant.initd::${_url}/net-wireless/wpa_supplicant/files/wpa_supplicant-init.d"
+        "${_url}/net-wireless/wpa_supplicant/files/wpa_cli.sh"
+        "xinetd.confd::${_url}/sys-apps/xinetd/files/xinetd.confd"
+        "xinetd.initd::${_url}/sys-apps/xinetd/files/xinetd.rc6"
+        'kmod-static-nodes.initd'
+)
+
+pkgver() {
+    date +%Y%m%d
+}
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed ${_sed_args[@]} -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package_cronie-openrc() {
+    pkgdesc="OpenRC cronie init script"
+    depends=('openrc' 'cronie')
+    provides=('openrc-cron')
+    conflicts=('fcron' 'fcron-openrc' 'systemd-sysvcompat')
+    backup=('etc/init.d/cronie')
+
+    _inst_initd 'cronie'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' -i ${pkgdir}/etc/init.d/cronie
+}
+
+package_dbus-openrc() {
+    pkgdesc="OpenRC dbus init script"
+    depends=('openrc' 'dbus')
+
+    _inst_initd 'dbus'
+
+    sed -e 's|dbus.pid|dbus/pid|g' -i "${pkgdir}/etc/init.d/dbus"
+}
+
+package_dhcpcd-openrc() {
+    pkgdesc="OpenRC dhcpcd init script"
+    depends=('openrc' 'dhcpcd')
+
+    _inst_initd 'dhcpcd'
+
+    sed -e 's|/sbin|/usr/bin|g' -i "${pkgdir}/etc/init.d/dhcpcd"
+}
+
+package_device-mapper-openrc() {
+    pkgdesc="OpenRC device-mapper init script"
+    depends=('device-mapper' 'eudev-openrc')
+    backup=('etc/conf.d/device-mapper')
+
+    _inst_confd 'device-mapper'
+    _inst_initd 'device-mapper'
+    _inst_initd 'dmeventd'
+
+    for f in ${pkgdir}/etc/init.d/*; do
+        sed -e 's|/sbin|/usr/bin|g' -i $f
+    done
+}
+
+package_cryptsetup-openrc() {
+    pkgdesc="OpenRC cryptsetup init script"
+    depends=('device-mapper-openrc' 'cryptsetup')
+    backup=('etc/conf.d/dmcrypt')
+
+    _inst_confd 'dmcrypt'
+    _inst_initd 'dmcrypt'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' -i "${pkgdir}/etc/init.d/dmcrypt"
+}
+
+package_glibc-openrc() {
+    pkgdesc="OpenRC nscd init script"
+    depends=('openrc' 'glibc')
+
+    _inst_initd 'nscd'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' -i "${pkgdir}/etc/init.d/nscd"
+}
+
+package_inetutils-openrc() {
+    pkgdesc="OpenRC ftpd init script"
+    depends=('openrc' 'inetutils')
+    backup=('etc/conf.d/ftpd')
+
+    _inst_confd 'ftpd'
+    _inst_initd 'ftpd'
+}
+
+package_kmod-openrc() {
+    pkgdesc="OpenRC nscd init script"
+    depends=('openrc' 'kmod')
+
+    _inst_initd 'kmod-static-nodes'
+
+    install -d "${pkgdir}/etc/runlevels/sysinit"
+    ln -sf "/etc/init.d/kmod-static-nodes" "${pkgdir}/etc/runlevels/sysinit/kmod-static-nodes"
+}
+
+package_lvm2-openrc() {
+    pkgdesc="OpenRC lvm2 init script"
+    depends=('device-mapper-openrc' 'lvm2')
+    backup=('etc/conf.d/lvm')
+
+    _inst_confd 'lvm'
+
+    for f in lvm lvm-monitoring lvmetad; do
+        _inst_initd "$f"
+    done
+
+    for f in ${pkgdir}/etc/init.d/*; do
+        sed -e 's|/sbin|/usr/bin|g' -i $f
+    done
+}
+
+package_mdadm-openrc() {
+    pkgdesc="OpenRC mdadm init script"
+    depends=('openrc' 'mdadm')
+    backup=('etc/conf.d/mdadm')
+
+    for f in mdadm mdraid;do
+        _inst_confd $f
+        _inst_initd $f
+    done
+}
+
+package_syslog-ng-openrc() {
+    pkgdesc="OpenRC syslog-ng init script"
+    depends=('openrc' 'syslog-ng')
+    backup=('etc/conf.d/syslog-ng')
+
+    _inst_confd 'syslog-ng'
+    _inst_initd 'syslog-ng'
+}
+
+package_rpcbind-openrc() {
+    pkgdesc="OpenRC rpcbind init script"
+    depends=('openrc' 'rpcbind')
+    backup=('etc/conf.d/rpcbind')
+
+    _inst_confd 'rpcbind'
+    _inst_initd 'rpcbind'
+
+    sed -e 's|/sbin|/usr/bin|g' \
+        -e 's|RPCBIND_OPTS|RPCBIND_ARGS|' \
+        -i "${pkgdir}/etc/init.d/rpcbind"
+}
+
+package_nfs-utils-openrc() {
+    pkgdesc="OpenRC nfs-utils init script"
+    depends=('nfs-utils' 'rpcbind-openrc' 'device-mapper-openrc')
+    backup=('etc/conf.d/nfs'
+            'etc/conf.d/nfsclient')
+
+    for f in nfs nfsclient;do
+        _inst_confd $f
+        _inst_initd $f
+    done
+
+    for f in rpc.gssd rpc.idmapd rpc.pipefs rpc.statd rpc.svcgssd;do
+        _inst_initd $f
+    done
+
+    for f in ${pkgdir}/etc/init.d/*;do
+            sed -e 's|/usr/sbin|/usr/bin|g' -i $f
+    done
+}
+
+package_elogind-openrc() {
+    pkgdesc="OpenRC elogind init script"
+    depends=('elogind' 'dbus-openrc' 'eudev-openrc')
+    groups=('openrc-system' 'base')
+
+    _inst_confd 'elogind'
+    _inst_initd 'elogind'
+
+    sed -e 's|/usr/libexec|/usr/lib|' \
+        -e 's|/var/run|/run|' \
+        -i "${pkgdir}/etc/conf.d/elogind"
+}
+
+package_gpm-openrc() {
+    pkgdesc="OpenRC gpm init script"
+    depends=('openrc' 'gpm')
+    backup=('etc/conf.d/gpm')
+
+    _inst_confd 'gpm'
+    _inst_initd 'gpm'
+}
+
+package_hdparm-openrc() {
+    pkgdesc="OpenRC hdparm init script"
+    depends=('openrc' 'hdparm')
+    backup=('etc/conf.d/hdparm')
+
+    _inst_confd 'hdparm'
+    _inst_initd 'hdparm'
+}
+
+package_openldap-openrc() {
+    pkgdesc="OpenRC openldap init script"
+    depends=('openrc' 'openldap')
+    backup=('etc/conf.d/slapd')
+
+    _inst_confd 'slapd'
+    _inst_initd 'slapd'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' \
+        -e 's|/usr/lib/openldap/slapd|/usr/lib/slapd|g' \
+        -i "${pkgdir}/etc/init.d/slapd"
+}
+
+package_openssh-openrc() {
+    pkgdesc="OpenRC openssh init script"
+    depends=('openrc' 'openssh')
+    backup=('etc/conf.d/sshd')
+
+    _inst_confd 'sshd'
+    _inst_initd 'sshd'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' \
+        -i "${pkgdir}/etc/conf.d/sshd"
+
+    sed -e 's|/usr/sbin|/usr/bin|g' \
+        -i "${pkgdir}/etc/init.d/sshd"
+}
+
+package_openvpn-openrc() {
+    pkgdesc="OpenRC openvpn init script"
+    depends=('openrc' 'openvpn')
+    backup=('etc/conf.d/openvpn')
+
+    _inst_confd 'openvpn'
+    _inst_initd 'openvpn'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' \
+        -i "${pkgdir}/etc/init.d/openvpn"
+}
+
+package_iptables-openrc() {
+    pkgdesc="OpenRC iptables init script"
+    depends=('openrc' 'iptables')
+    backup=('etc/conf.d/iptables'
+        'etc/conf.d/ip6tables')
+
+    _inst_confd 'iptables'
+    _inst_initd 'iptables'
+
+    _inst_confd 'ip6tables'
+# 	_inst_initd 'iptables'
+
+    install -Dm755 "${srcdir}/iptables.initd" "${pkgdir}/etc/init.d/ip6tables"
+
+    for f in ${pkgdir}/etc/init.d/*;do
+        sed -e 's|/sbin|/usr/bin|g' -i $f
+    done
+}
+
+package_krb5-openrc() {
+    pkgdesc="OpenRC krb5 init script"
+    depends=('openrc' 'krb5')
+
+    for f in krb5kadmind krb5kdc krb5kpropd;do
+        _inst_initd $f
+    done
+
+    for f in ${pkgdir}/etc/init.d/*;do
+        sed -e 's|/usr/sbin|/usr/bin|g' \
+            -e 's|mit-krb5kdc|krb5kdc|g' \
+            -e 's|mit-krb5kadmind|krb5kadmind|g' \
+            -i $f
+    done
+}
+
+package_wpa_supplicant-openrc() {
+    pkgdesc="OpenRC wpa_supplicant init script"
+    depends=('openrc' 'wpa_supplicant')
+    backup=('etc/conf.d/wpa_supplicant')
+
+    _inst_confd 'wpa_supplicant'
+    _inst_initd 'wpa_supplicant'
+
+    install -Dm755 "${srcdir}/wpa_cli.sh" "${pkgdir}/etc/wpa_supplicant/wpa_cli.sh"
+
+    if [[ -f /etc/os-release ]];then
+        . /etc/os-release
+        sed -e "s|gentoo-release|${ID}-release|" -i "${pkgdir}/etc/wpa_supplicant/wpa_cli.sh"
+    else
+        sed -e 's|gentoo-release|arch-release|' -i "${pkgdir}/etc/wpa_supplicant/wpa_cli.sh"
+    fi
+}
+
+package_xinetd-openrc() {
+    pkgdesc="OpenRC xinetd init script"
+    depends=('openrc' 'xinetd')
+    backup=('etc/conf.d/xinetd')
+
+    _inst_confd 'xinetd'
+    _inst_initd 'xinetd'
+
+    sed -e 's|/usr/sbin|/usr/bin|g' \
+        -i "${pkgdir}/etc/init.d/xinetd"
+}
+
+sha256sums=('8646ff964892eeb5f6c5da444a5ef5d898fb1f3a395c5b9fc85d32d8d56fc785'
+            '3d933a54abe62a547294b83208dbf5d7615d9c7f380d6504c91fff3620530803'
+            'd04627e1a64e4d86e957b20ff6f478fb376833b7602098a708af9c070e30a980'
+            '13391343bfc64379c696b4bfc1cfe8d7fbb2886f477265343fddf448d82deabf'
+            '57777904f12a35617e5a4193c964ebb32396452487fd02353e71e16e7b46bc22'
+            'e8bfde63341f9e6136ee20a15ed9ea455e2259dbcaea756f8c3d0f710c1c2746'
+            '5edaaad292d4fd6b67fd5323636dd2e839be33ae16fbc7872dadb0499fcf22da'
+            '28370c089c39c248d7ded0960b8d8a9256bada44d44c22ce3cec87d512ef6844'
+            '499fae740d7740895842e2a6db8736272ceacf2d4b6f57f00a8ff91b7993d1da'
+            '42847d8e6dabbcf2cc19846c6ad22cbab65e9a033c4add569b152504b16ab477'
+            'e7f17004d505eae5d8a2fb336b22f1cdb20bb2ecf85a98daf2485bb4b0d4ff12'
+            'ec55674955af7a31da51b8b72b599e8519809287dad796a9b16155bcba471b79'
+            '5b859ba14b7a4a350c0a8afe6edb352e0db9920bdf1e05315ffbbfb92f201584'
+            'b489ced10391d4295bb8ca29e128b0d4217c290f1b4e37b05f5a9275048d289d'
+            '31e7ba4174f38c05e939aa56fab8a43a3e371ba9e503e029887c99fed7a28331'
+            '6bb9b8b0075e45e63e898ed043f3c5951dc3e95c1fa62d22cc6e0616c792ecd1'
+            '00a1a8f254d4f40b6f98a2777809b9c45ad81c4aeb4c0592793dd839777990bd'
+            '59fe1aa68c43f4958afc397a0d6b35da263a20fcdb457005123a0d64cb1f7477'
+            '7f46e5e9ac9f204fb1564560c506a5bb4cede8823b89e3f1844e4f8be258e9ef'
+            'c652a4fe8a43dc68a818345db2b3acc560663b5b6c969324d4f23afb0fb96a94'
+            '247456e845e70badb44d9155b68e5f76d502361769e4332a9d1bd6345f85fbfa'
+            'e8842fca856eae598fb8fe15ed8d3cef13e61851217be66b8cc4087af8cee8ad'
+            '56973f5c8196b4227114d94a1d3c8c95518be5a02c6b5dc97da243d0b6086843'
+            'dc21ce6ba28f45eb450d5d0dbe7e5ea706b1547c8bece4ddb6836a5433427bd6'
+            '04102bff9b13d2e7c4e30603e7c98fe412d5f6c907a37dcea95f420f153c29ae'
+            '83c318a7502718a3e1693869297b95db1c32270b37d45b26b2bc151ec06f3c08'
+            '272905335a7c82034c6bac007bd4477aae21d8ce49e82355c48301db771ba77e'
+            '6f3d93442db0c17436547a16155e0d61dd5cd17f49fd3a642a9a5de833411d51'
+            'ef7eec0fd1921f786580169628c9cc7af82c73d0b2cf420fba0e87f8fd428651'
+            '38bb95aefc38d843d0890d9c15affd28f19f2133c17f463396c62970e7e2dffc'
+            'da992f87b5043e22dfd340b4a5440b76dce29cc14d3ef7b0ce586726fe4b220b'
+            'ad651e0c6cd456cc0209802ac878a7c08e69435f0428ded4ad116d11f728b2dd'
+            '982423a88eea889c194123ecffbdea03d8f94ca497b7b32bd86fdf20a81680c7'
+            '73e7483fdc4b12ab4225a4cb13bbe7da71b07b9e69b17e3a6a4c63cb5e2287c8'
+            'b48fd8ef0c4e64ca3f3ada72e8e2148a276f86bf3cbb1a165504058bd15385c1'
+            '37c95ff723fa578e9039613d09dbf790d99113a318c065422986c744519214e9'
+            '05b264cadc84984f773cd555af322b41fdb13da7cb2ca60d8a7d590ddf4d5e5f'
+            '330149a83684ddabe413d134d4c8efad4c88b18c2ab67165014deff5f7fffad2'
+            '89f69bcd627868830c421bc6270f08a1c3edf1a1e5fbdedf33c7a7d530bdfccf'
+            '29c6d57ac3ec6018cadc6ba6cd9b90c9ed46e20049b970fdcc68ee2481a2ee41'
+            '43a483014bf177f9238e54a7b8210d5a76830beb67c18999409e543fd744c9e4'
+            '5bca003ec3b67c7c78519aede1d82002579006ccfecce8f87b559df719f82e92'
+            'bcd84fca8efc1eec3aea489f238b51ce7226ffcdb1562044e48106897bc5a6fc'
+            '7e2341211ca14997b7a8a1f930f94db855291af597c568f680f80031c20d45b6'
+            '2938fe4206514d9868047bd8f888a699fa2097ca69edab176453436d4259abaa'
+            '2c9dcf73db7740350d41504633671e95287a349838acd5faa6d3b27418c9d6d0'
+            '0b3b5bcfdb5010d20e3d4457f4128a4fb9f2d91261bfcf489601b1c714f9d815'
+            '30572eeec9013fbfb6170f2b0bd1016582d2664268e4019fa8e2edd41e52919d'
+            'bf8539b70561d9eb495f55141a5295a8c2e8246af4d1990af94e98be952dcdf9'
+            '61ec59007f66ac5bacc0aa095d1f2ccbc977a687038e161a463d1727223d5a90'
+            '98985142371d39ea6294d757e85a3d3fc9fc21718063afbf81869e1d2ca648a7'
+            'f3aa34b99a90213c53496f8ea014c487266338791f3526043a7fd97adc651fc6'
+            'e401e2cf7c0180a170d3dc3e91d7e98002bae7b013df72813b7bcf89b864fb3a'
+            '6934fee5e3997d7e152c26d0c1a8f8d2f7563287fcc1ae934e4552d523c39329'
+            '3ecbe7761b92a123a5a3d395ec3d9e090b0dfba7910a5987b4a2298c20a7e571')

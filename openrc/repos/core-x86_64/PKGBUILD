@@ -1,0 +1,98 @@
+# Maintainer: artoo <artoo@cromnix.org>
+# Contributor: williamh <williamh@gentoo.org>
+
+_url="https://github.com/OpenRC/openrc/archive"
+
+pkgname=openrc
+pkgver=0.34.11
+pkgrel=3
+pkgdesc="Gentoo's universal init system"
+arch=('i686' 'x86_64' 'armv7h')
+url="http://www.gentoo.org/proj/en/base/openrc/"
+license=('BSD2')
+depends=('psmisc' 'pam' 'opentmpfiles')
+optdepends=('netifrc: Network Interface Management Scripts'
+            'networkmanager-openrc: NetworkManager')
+conflicts=('systemd-sysvcompat' 'sysvinit')
+replaces=('sysvinit')
+install=${pkgname}.install
+backup=('etc/rc.conf'
+        'etc/conf.d/consolefont'
+        'etc/conf.d/keymaps'
+        'etc/conf.d/hostname'
+        'etc/conf.d/modules'
+        'etc/conf.d/hwclock'
+        etc/conf.d/agetty.tty{1,2,3,4,5,6})
+options=('!emptydirs')
+source=("${pkgname}-${pkgver}.tar.gz::${_url}/${pkgver}.tar.gz"
+        "${pkgname}.logrotate"
+        'openrc-install.hook'
+        'openrc-remove.hook')
+sha256sums=('4e7b7510c363e99622400feba4b009ec0e0b57dbb99fd4cc678a7b5d2036e00a'
+            '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
+            '1d4d31a7275660e7b23778e6fceb0714cab8ed2793b04aa004b01d8e7bcd43bd'
+            'cbb4d00262a55a508114cb31e3903350be2cff748a4fb5e120dc745292e3987e')
+
+_args=(
+    SYSCONFDIR=/etc
+    PREFIX=/usr
+    SBINDIR=/usr/bin
+    LIBEXECDIR=/usr/lib/openrc
+    MKSELINUX=no
+    MKPAM=pam
+    MKTERMCAP=ncurses
+    MKNET=no
+    MKSYSVINIT=yes
+)
+
+if [ -f /usr/lib/os-release ]; then
+    . /usr/lib/os-release
+    _args+=(BRANDING="${NAME}")
+else
+    _args+=(BRANDING='Unknown Linux')
+fi
+
+prepare(){
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    sed -e "s|/sbin|/usr/bin|g" -i support/sysvinit/inittab
+    sed -i 's:0444:0644:' mk/sys.mk
+}
+
+build(){
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    make "${_args[@]}"
+}
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    make DESTDIR="${pkgdir}" "${_args[@]}" install
+
+    install -Dm644 "${srcdir}/${pkgname}.logrotate" "${pkgdir}/etc/logrotate.d/${pkgname}"
+
+    sed -e 's/#unicode="NO"/unicode="YES"/' \
+        -e 's/#rc_logger="NO"/rc_logger="YES"/' \
+        -i "${pkgdir}/etc/rc.conf"
+
+    install -d ${pkgdir}/usr/lib/openrc/cache
+
+    # getty
+    sed -e 's|#baud=""|baud="38400"|' \
+        -e 's|#term_type="linux"|term_type="linux"|' \
+        -e 's|#agetty_options=""|agetty_options=""|' \
+        -i ${pkgdir}/etc/conf.d/agetty
+
+    for num in 1 2 3 4 5 6;do
+        cp -v ${pkgdir}/etc/conf.d/agetty ${pkgdir}/etc/conf.d/agetty.tty$num
+        ln -sf /etc/init.d/agetty ${pkgdir}/etc/init.d/agetty.tty$num
+        ln -sf /etc/init.d/agetty.tty$num ${pkgdir}/etc/runlevels/default/agetty.tty$num
+    done
+
+    # alpm hooks
+    for h in openrc-{install,remove}.hook;do
+        install -Dm644 ${srcdir}/$h ${pkgdir}/usr/share/libalpm/hooks/$h
+    done
+
+    # license
+    install -Dm644 ${srcdir}/${pkgname}-${pkgver}/LICENSE "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
+}

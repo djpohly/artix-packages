@@ -1,0 +1,26 @@
+# $Id$
+# Maintainer: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Bartłomiej Piotrowski
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
+
+pkgname=jbig2dec
+pkgver=0.14
+pkgrel=1
+pkgdesc='Decoder implementation of the JBIG2 image compression format'
+url='https://artifex.com/developers-ghostscript-jbig2dec/'
+arch=('x86_64')
+license=('GPL3')
+depends=('libpng')
+source=("https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs922/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('21b498c3ba566f283d02946f7e78e12abbad89f12fe4958974e50882c185014c')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./autogen.sh --prefix=/usr
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}

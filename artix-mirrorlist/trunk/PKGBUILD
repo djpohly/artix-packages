@@ -1,0 +1,22 @@
+# $Id$
+# Maintainer: Chris Cromer <cromer@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
+
+pkgname=artix-mirrorlist
+pkgver=20171021
+pkgrel=1
+pkgdesc="Artix mirror list for use by pacman"
+arch=('any')
+url="https://www.artixlinux.org/mirrorlist/"
+license=('GPL')
+provides=('pacman-mirrorlist')
+conflicts=('pacman-mirrorlist')
+replaces=('pacman-mirrorlist')
+backup=(etc/pacman.d/mirrorlist)
+source=(mirrorlist)
+sha256sums=('c6929a43b2b1d017afc83c198ace52165d6453a0afa2e82131209e2a9699acb0')
+
+package() {
+  mkdir -p $pkgdir/etc/pacman.d
+  install -m644 $srcdir/mirrorlist $pkgdir/etc/pacman.d/
+}
