@@ -1,7 +1,7 @@
 # Maintainer: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Patryk Kowalczyk < patryk at kowalczyk dot ws>
 
-pkgname=libseccomp
+pkgname=libseccomp #Please build
 pkgver=2.3.2
 pkgrel=2
 pkgdesc='Enhanced seccomp library'
