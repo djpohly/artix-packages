@@ -13,7 +13,7 @@ arch=(x86_64)
 license=(GPL)
 url='http://www.gnu.org/software/bash/bash.html'
 groups=(base)
-backup=(etc/bash/bash{rc,_logout} etc/skel/.bash{rc,_profile,_logout})
+backup=(etc/bash.bash{rc,_logout} etc/skel/.bash{rc,_profile,_logout})
 depends=('readline>=7.0' glibc ncurses)
 optdepends=('bash-completion: for tab completion')
 provides=('sh')
@@ -22,8 +22,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
         dot.bash_profile
         dot.bash_logout
         system.bashrc
-        system.bash_logout
-        artix.bashrc)
+        system.bash_logout)
 validpgpkeys=('7C0135FB088AAF6C66C650B9BB5869F064EA74AB') # Chet Ramey
 
 if [[ $((10#${_patchlevel})) -gt 0 ]]; then
@@ -46,8 +45,8 @@ build() {
 
   _bashconfig=(-DDEFAULT_PATH_VALUE=\'\"/usr/local/sbin:/usr/local/bin:/usr/bin\"\'
                -DSTANDARD_UTILS_PATH=\'\"/usr/bin\"\'
-               -DSYS_BASHRC=\'\"/etc/bash/bashrc\"\'
-               -DSYS_BASH_LOGOUT=\'\"/etc/bash/bash_logout\"\'
+               -DSYS_BASHRC=\'\"/etc/bash.bashrc\"\'
+               -DSYS_BASH_LOGOUT=\'\"/etc/bash.bash_logout\"\'
                -DNON_INTERACTIVE_LOGIN_SHELLS)
   export CFLAGS="${CFLAGS} ${_bashconfig[@]}"
 
@@ -65,25 +64,23 @@ package() {
   ln -s bash "$pkgdir/usr/bin/sh"
 
   # system-wide configuration files
-  install -Dm644 system.bashrc "$pkgdir/etc/bash/bashrc"
-  install -Dm644 system.bash_logout "$pkgdir/etc/bash/bash_logout"
+  install -Dm644 system.bashrc "$pkgdir/etc/bash.bashrc"
+  install -Dm644 system.bash_logout "$pkgdir/etc/bash.bash_logout"
 
   # user configuration file skeletons
   install -dm755 "$pkgdir/etc/skel/"
   install -m644 dot.bashrc "$pkgdir/etc/skel/.bashrc"
   install -m644 dot.bash_profile "$pkgdir/etc/skel/.bash_profile"
-  install -m644 dot.bash_logout "$pkgdir/etc/skel/.bash_logout
-  install -m644 artix.bashrc "$pkgdir"/etc/bash/bashrc.d/artix.bashrc"
+  install -m644 dot.bash_logout "$pkgdir/etc/skel/.bash_logout"
 }
 
 md5sums=('148888a7c95ac23705559b6f477dfe25'
          'SKIP'
-         'ce11f47d237536886b6dacaf453ae340'
+         '027d6bd8f5f6a06b75bb7698cb478089'
          '2902e0fee7a9168f3a4fd2ccd60ff047'
          '42f4400ed2314bd7519c020d0187edc5'
-         '95de0ef756fafa0603f9cc77f2e0e668'
-         'eaaa72c2dd106afb2ea3743269cf4d59'
-         'a4e86da0d0d6d6f9a69f4d8992fafe2e'
+         'd8f3f334e72c0e30032eae1a1229aef1'
+         '472f536d7c9e8250dc4568ec4cfaf294'
          '817d01a6c0af6f79308a8b7b649e53d8'
          'SKIP'
          '765e14cff12c7284009772e8e24f2fe0'
