@@ -7,12 +7,12 @@ pkgname=libdvdnav
 pkgver=5.0.3
 pkgrel=1
 pkgdesc="The library for xine-dvdnav plugin."
-arch=('i686' 'x86_64')
+arch=('x86_64')
 license=('GPL')
 url="http://dvdnav.mplayerhq.hu/"
 depends=('libdvdread')
 makedepends=('git')
-source=(git://git.videolan.org/libdvdnav.git#tag=$pkgver
+source=(git+https://code.videolan.org/videolan/libdvdnav.git#tag=$pkgver
         fix-crash-describe_title.patch)
 sha256sums=('SKIP'
             '6a8e9c777dd9dbfa8a7f981796bd7a60412e3a5c7a8400253c567d956412c64b')
