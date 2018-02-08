@@ -101,7 +101,10 @@ check() {
 package() {
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
-  find "${pkgdir}/usr/bin" -type f -executable -exec strip $STRIP_BINARIES {}+ || true
+
+  if check_option 'debug' n; then
+    find "${pkgdir}/usr/bin" -type f -executable -exec strip $STRIP_BINARIES {} + || true
+  fi
 }
 
 # vim: ts=2 sw=2 et:
