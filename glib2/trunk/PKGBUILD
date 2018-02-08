@@ -35,9 +35,6 @@ prepare() {
   # Suppress noise from glib-compile-schemas.hook
   patch -Np1 -i ../noisy-glib-compile-schemas.diff
 
-  # kill tests
-  sed -i -e 's/ tests//' {.,gio,glib}/Makefile.am
-  
   NOCONFIGURE=1 ./autogen.sh
 }
 
