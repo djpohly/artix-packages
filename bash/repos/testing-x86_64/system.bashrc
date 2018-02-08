@@ -1,5 +1,5 @@
 #
-# /etc/bash.bashrc
+# /etc/bash/bashrc
 #
 
 # If not running interactively, don't do anything
@@ -18,5 +18,9 @@ case ${TERM} in
     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
     ;;
 esac
+
+for sh in /etc/bash/bashrc.d/*.bashrc ; do
+	[[ -r ${sh} ]] && source "${sh}"
+done
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion

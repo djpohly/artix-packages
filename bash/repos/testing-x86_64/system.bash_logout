@@ -1,3 +1,3 @@
 #
-# /etc/bash.bash_logout
+# /etc/bash/bash_logout
 #

@@ -72,8 +72,8 @@ package() {
   install -dm755 "$pkgdir/etc/skel/"
   install -m644 dot.bashrc "$pkgdir/etc/skel/.bashrc"
   install -m644 dot.bash_profile "$pkgdir/etc/skel/.bash_profile"
-  install -m644 dot.bash_logout "$pkgdir/etc/skel/.bash_logout
-  install -m644 artix.bashrc "$pkgdir"/etc/bash/bashrc.d/artix.bashrc"
+  install -m644 dot.bash_logout "$pkgdir/etc/skel/.bash_logout"
+  install -Dm644 artix.bashrc "$pkgdir"/etc/bash/bashrc.d/artix.bashrc
 }
 
 md5sums=('148888a7c95ac23705559b6f477dfe25'
