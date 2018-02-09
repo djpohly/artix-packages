@@ -42,7 +42,6 @@ pipeline {
                     
                     int pkgCount = changedPkgStatus.size()
                     int pkgPathCount = pkgPath.size()
-                    
                     echo "pkgCount: ${pkgCount}"
                     echo "entryCount: ${entryCount}"
                     echo "pkgPathCount: ${pkgPathCount}"
@@ -172,7 +171,7 @@ pipeline {
             post {
                 success {
                     dir("${PKG_PATH}") {
-                        echo "deploypkg -a -d ${ADD_REPO}"
+                        echo "deploypkg -a -d ${ADD_REPO} -s"
                     }
                 }
             }
