@@ -11,4 +11,4 @@ linux-lts.install.pkg
 *.timer
 iptables-flush
 *.log
-
+*-i686
