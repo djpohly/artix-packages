@@ -33,7 +33,7 @@ pipeline {
                         def fileStatus = entry[0]
                         entryCount = entry.size()
                         for ( int j = 1; j < entry.size(); j++ ) {
-                            if ( entry[j].contains('PKGBUILD') && entry[j].contains('repos') ){
+                            if ( entry[j].contains('/PKGBUILD') && entry[j].contains('/repos') ){
                                 changedPkgStatus << "${fileStatus} " + entry[j].minus('/PKGBUILD')
                                 pkgPath << entry[j].minus('/PKGBUILD')
                             }
