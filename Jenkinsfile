@@ -12,9 +12,6 @@ pipeline {
         skipDefaultCheckout()
         timestamps()
     }
-    environment {
-        BUILDBOT_GPGP = credentials('BUILDBOT_GPGP')
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -60,28 +57,47 @@ pipeline {
                             pkgStatus << pkgEntry2[0]
                             def buildInfo1 = srcPath[0].tokenize('/')
                             def buildInfo2 = srcPath[1].tokenize('/')
-                            for ( s in pkgStatus ) {
-                                if ( s == "M" ) {
-                                    IS_ADD = 'true'
-                                    if ( srcPath[0].contains('testing') ) {
-                                        ADD_REPO = 'gremlins'
-                                    } else if ( srcPath[0].contains('core') ) {
-                                        ADD_REPO = 'system'
-                                    } else if ( srcPath[0].contains('extra') ) {
-                                        ADD_REPO = 'world'
-                                    }
+                            
+                            if ( pkgStatus[0] == 'M' ) {
+                                IS_ADD = 'true'
+                                if ( srcPath[0].contains('testing') ) {
+                                    ADD_REPO = 'gremlins'
+                                } else if ( srcPath[0].contains('core') ) {
+                                    ADD_REPO = 'system'
+                                } else if ( srcPath[0].contains('extra') ) {
+                                    ADD_REPO = 'world'
                                 }
-                                if ( s == 'D' ) {
-                                    IS_REMOVE = 'true'
-                                    if ( srcPath[1].contains('testing') ) {
-                                        RM_REPO = 'gremlins'
-                                    } else if ( srcPath[1].contains('core') ) {
-                                        RM_REPO = 'system'
-                                    } else if ( srcPath[1].contains('extra') ) {
-                                        RM_REPO = 'world'
-                                    }
+                            } else if ( pkgStatus[1] == 'M' ) {
+                                IS_ADD = 'true'
+                                if ( srcPath[1].contains('testing') ) {
+                                    ADD_REPO = 'gremlins'
+                                } else if ( srcPath[1].contains('core') ) {
+                                    ADD_REPO = ''
+                                } else if ( srcPath[1].contains('extra') ) {
+                                    ADD_REPO = 'world'
                                 }
                             }
+                            
+                            if ( pkgStatus[0] == 'D' ) {
+                                IS_REMOVE = 'true'
+                                if ( srcPath[0].contains('testing') ) {
+                                    RM_REPO = 'gremlins'
+                                } else if ( srcPath[0].contains('core') ) {
+                                    RM_REPO = 'system'
+                                } else if ( srcPath[0].contains('extra') ) {
+                                    RM_REPO = 'world'
+                                }
+                            } else if ( pkgStatus[1] == 'D' ) {
+                                IS_REMOVE = 'true'
+                                if ( srcPath[1].contains('testing') ) {
+                                    RM_REPO = 'gremlins'
+                                } else if ( srcPath[1].contains('core') ) {
+                                    RM_REPO = 'system'
+                                } else if ( srcPath[1].contains('extra') ) {
+                                    RM_REPO = 'world'
+                                }
+                            }
+                            
                             PKG_TRUNK = buildInfo1[0] + '/trunk'
                         } 
 
@@ -90,9 +106,11 @@ pipeline {
                             def pkgStatus = pkgEntry[0]
                             def buildInfo1 = pkgPath[0].tokenize('/')
                             def buildInfo2 = pkgPath[1].tokenize('/')
+                            
                             if ( pkgStatus.contains('R') ) {
                                 IS_ADD = 'true'
                                 IS_REMOVE = 'true'
+                                
                                 if ( pkgPath[0].contains('staging') && pkgPath[1].contains('testing') ) {
                                     ADD_REPO = 'gremlins'
                                     RM_REPO = 'goblins'
@@ -100,6 +118,23 @@ pipeline {
                                     ADD_REPO = 'goblins'
                                     RM_REPO = 'gremlins'
                                 }
+                                
+                                if ( pkgPath[0].contains('core') && pkgPath[1].contains('testing')) {
+                                    ADD_REPO = 'gremlins'
+                                    RM_REPO = 'system'
+                                } else if ( pkgPath[0].contains('testing') && pkgPath[1].contains('core')) {
+                                    ADD_REPO = 'system'
+                                    RM_REPO = 'gremlins'
+                                }
+                                
+                                if ( pkgPath[0].contains('extra') && pkgPath[1].contains('testing')) {
+                                    ADD_REPO = 'gremlins'
+                                    RM_REPO = 'world'
+                                } else if ( pkgPath[0].contains('testing') && pkgPath[1].contains('extra')) {
+                                    ADD_REPO = 'world'
+                                    RM_REPO = 'gremlins'
+                                }
+                                
                                 if ( pkgPath[0].contains('core') && pkgPath[1].contains('extra')) {
                                     ADD_REPO = 'world'
                                     RM_REPO = 'system'
@@ -116,6 +151,7 @@ pipeline {
                             def pkgStatus = pkgEntry[0]
                             def srcPath = pkgEntry[1]
                             def buildInfo = srcPath.tokenize('/')
+                            
                             if ( srcPath.contains('staging') ) {
                                 if ( pkgStatus == 'A' || pkgStatus == 'M' ) {
                                     IS_BUILD = 'true'
@@ -162,6 +198,9 @@ pipeline {
             }
         }
         stage('Build') {
+            environment {
+                BUILDBOT_GPGP = credentials('BUILDBOT_GPGP')
+            }
             when {
                 expression { return  IS_BUILD == 'true' }
             }
