@@ -1,0 +1,35 @@
+diff --git a/contrib/rankmirrors.sh.in b/contrib/rankmirrors.sh.in
+index 7b50eb29..1de5857d 100644
+--- a/contrib/rankmirrors.sh.in
++++ b/contrib/rankmirrors.sh.in
+@@ -58,7 +58,7 @@ err() {
+ 	exit 1
+ }
+ 
+-# gettime fetchurl (e.g gettime http://foo.com/core/os/i686/core.db.tar.gz)
++# gettime fetchurl (e.g gettime http://foo.com/system/os/i686/system.db.tar.gz)
+ # returns the fetching time, or timeout, or unreachable
+ gettime() {
+ 	IFS=' ' output=( $(curl -s -m 10 -w "%{time_total} %{http_code}" "$1" -o/dev/null) )
+@@ -67,17 +67,17 @@ gettime() {
+ 	echo "${output[0]}"
+ }
+ 
+-# getfetchurl serverurl (e.g. getturl http://foo.com/core/os/i686)
+-# if $repo is in the line, then assumes core
++# getfetchurl serverurl (e.g. getturl http://foo.com/system/os/i686)
++# if $repo is in the line, then assumes system
+ # if $arch is in the line, then assumes $(uname -m)
+-# returns a fetchurl (e.g. http://foo.com/core/os/i686/core.db.tar.gz)
++# returns a fetchurl (e.g. http://foo.com/system/os/i686/system.db.tar.gz)
+ ARCH="$(uname -m)"
+ getfetchurl() {
+ 	local strippedurl="${1%/}"
+ 
+ 	local replacedurl="${strippedurl//'$arch'/$ARCH}"
+ 	if [[ ! $TARGETREPO ]]; then
+-		replacedurl="${replacedurl//'$repo'/core}"
++		replacedurl="${replacedurl//'$repo'/system}"
+ 		local tmp="${replacedurl%/*}"
+ 		tmp="${tmp%/*}"
+ 
