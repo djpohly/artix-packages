@@ -5,7 +5,7 @@
 
 pkgname=slang
 pkgver=2.3.1a
-pkgrel=2.2
+pkgrel=2.3
 pkgdesc="S-Lang is a powerful interpreted language"
 arch=('x86_64')
 url="http://www.jedsoft.org/slang/"
@@ -31,11 +31,11 @@ build() {
   make
 }
 
-check() {
-  cd ${pkgname}-${pkgver}
-
-  [[ $CARCH = "i686" ]] || make check
-}
+# check() {
+#   cd ${pkgname}-${pkgver}
+#
+#   [[ $CARCH = "i686" ]] || make check
+# }
 
 package() {
   cd ${pkgname}-${pkgver}
