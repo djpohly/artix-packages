@@ -4,10 +4,10 @@
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=btrfs-progs
-pkgver=4.14.1
+pkgver=4.15
 pkgrel=1
 pkgdesc='Btrfs filesystem utilities'
-arch=('i686' 'x86_64')
+arch=('x86_64')
 depends=('glibc' 'libutil-linux' 'e2fsprogs' 'lzo' 'zlib' 'zstd')
 makedepends=('git' 'asciidoc' 'xmlto' 'eudev')
 url='https://btrfs.wiki.kernel.org'
@@ -22,7 +22,7 @@ source=("https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-
 install=btrfs-progs.install
 options=(!staticlibs)
 md5sums=('SKIP'
-         'fa1618a0ee07e88d39c4e4e39775ed35'
+         'e7dd633a27e8edca98457dc9d3e4912c'
          '7241ba3a4286d08da0d50b7176941112'
          'b09688a915a0ec8f40e2f5aacbabc9ad')
 
@@ -48,7 +48,6 @@ package() {
   cd "$srcdir"
   install -Dm644 initcpio-install-btrfs "$pkgdir/usr/lib/initcpio/install/btrfs"
   install -Dm644 initcpio-hook-btrfs "$pkgdir/usr/lib/initcpio/hooks/btrfs"
-
 }
 
 # vim:set ts=2 sw=2 ft=sh et:
