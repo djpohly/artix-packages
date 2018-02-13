@@ -15,7 +15,7 @@ _jdk_update=144
 _jdk_build=01
 pkgver=${_java_ver}.u${_jdk_update}
 _repo_ver=jdk${_java_ver}u${_jdk_update}-b${_jdk_build}
-pkgrel=1.1
+pkgrel=1.2
 arch=('x86_64')
 url='http://openjdk.java.net/'
 license=('custom')
@@ -75,6 +75,10 @@ build() {
   export MAKEFLAGS=${MAKEFLAGS/-j*}
   # https://hydra.nixos.org/build/41230444/log
   export CFLAGS="-Wno-error=deprecated-declarations"
+
+  export CFLAGS=${CFLAGS/-fno-plt}
+  export CXXFLAGS=${CXXFLAGS/-fno-plt}
+  export LDFLAGS=${LDFLAGS/,-z,now}
 
   install -d -m 755 "${srcdir}/${_prefix}/"
   sh configure \
