@@ -8,7 +8,7 @@
 pkgname=perl
 pkgver=5.26.1
 _baseversion="${pkgver%.*}"
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A highly capable, feature-rich programming language"
 arch=(x86_64)
 license=('GPL' 'PerlArtistic')
@@ -183,11 +183,11 @@ build() {
   make
 }
 
-check() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  TEST_JOBS=$(echo $MAKEFLAGS | sed 's/.*-j\([0-9][0-9]*\).*/\1/') make test_harness
-#  make test
-}
+# check() {
+#   cd ${srcdir}/${pkgname}-${pkgver}
+#   TEST_JOBS=$(echo $MAKEFLAGS | sed 's/.*-j\([0-9][0-9]*\).*/\1/') make test_harness
+# #  make test
+# }
 
 package() {
   cd ${srcdir}/${pkgname}-${pkgver}
