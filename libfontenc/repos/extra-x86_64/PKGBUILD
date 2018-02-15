@@ -1,4 +1,3 @@
-# $Id$
 #Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libfontenc
@@ -19,7 +18,7 @@ build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr --sysconfdir=/etc \
       --localstatedir=/var --disable-static \
-      --with-encodingsdir=/usr/share/fonts/encodings      
+      --with-encodingsdir=/usr/share/fonts/encodings
   make
 }
 
