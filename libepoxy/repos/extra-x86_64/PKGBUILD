@@ -1,4 +1,3 @@
-# $Id$
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=libepoxy
@@ -32,7 +31,7 @@ build() {
 
 check() {
   cd build
-  mesontest
+  meson test
 }
 
 package() {
