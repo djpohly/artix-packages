@@ -1,6 +1,6 @@
 post_install() {
 	echo
-	echo "  > FluidSynth comes with a daemon. Start/enable it."
+	echo "  > FluidSynth comes with a daemon. Start/enable it with systemd."
 	echo "  > Before that, you need a soundfont and some preconfiguration:"
 	echo "      /etc/conf.d/fluidsynth"
 	echo
