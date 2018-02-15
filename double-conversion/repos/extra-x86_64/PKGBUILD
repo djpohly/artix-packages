@@ -1,6 +1,5 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Joel Teichroeb <joel@teichroeb.net>
-# Contributor: Jonas Heinrich <onny@project-insanity.org>
 
 pkgname=double-conversion
 pkgver=3.0.0
