@@ -56,10 +56,10 @@ build() {
   make
 }
 
-check() {
-  cd $pkgbase
-  make check
-}
+# check() {
+#   cd $pkgbase
+#   make check
+# }
 
 package_dbus() {
   provides=(libdbus)
