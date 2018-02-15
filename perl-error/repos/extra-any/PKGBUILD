@@ -1,4 +1,3 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-error
@@ -17,7 +16,7 @@ sha512sums=('0cb77d8be2f759aaf8970f9d5fa5483ba5ba687c115f6bbeaa22afb1b5c50fe6f70
 build() {
   cd Error-${pkgver}
   perl Makefile.PL INSTALLDIRS=vendor
-  make 
+  make
 }
 
 check() {
