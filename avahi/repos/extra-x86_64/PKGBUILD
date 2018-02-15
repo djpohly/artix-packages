@@ -5,7 +5,7 @@
 
 pkgname=avahi
 pkgver=0.7
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Service Discovery for Linux using mDNS/DNS-SD -- compatible with Bonjour'
 url='https://github.com/lathiat/avahi'
 license=(LGPL)
@@ -76,12 +76,13 @@ package() {
 
   # this isn't ported
   sed -i '1s|python3|python2|' "$pkgdir/usr/bin/avahi-bookmarks"
+  sed -i '1s|python3|python2|' "$pkgdir/usr/bin/avahi-discover"
 
   # mdnsresponder compat
   ln -s avahi-compat-libdns_sd/dns_sd.h "$pkgdir/usr/include/dns_sd.h"
 
   # rm example services (because no systemd) https://bugs.archlinux.org/task/47822
-  rm -rf "$pkgdir"/etc/avahi/services
+  rm -f "$pkgdir"/etc/avahi/services/{,sftp-}ssh.service
 
   echo 'u avahi - "Avahi mDNS/DNS-SD daemon"' |
     install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
