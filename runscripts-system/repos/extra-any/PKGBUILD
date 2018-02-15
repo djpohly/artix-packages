@@ -6,7 +6,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgbase=runscripts-system
 pkgname=(
-#        'dbus-runscripts'
+        'dbus-runscripts'
 #        'cronie-runscripts'
 #        'cryptsetup-runscripts'
 #        'dhcpcd-runscripts'
@@ -17,7 +17,7 @@ pkgname=(
 #        'mdadm-runscripts'
 #        'nfs-utils-runscripts'
 #        'rpcbind-runscripts'
-        'elogind-runscripts'
+#        'elogind-runscripts'
 #        'gpm-runscripts'
 #        'hdparm-runscripts'
 #        'iptables-runscripts'
@@ -228,7 +228,7 @@ sha256sums=('3ea09bc7b3753cf8ef764dd2ff8cec5cdd781deac441965e8a7238ce0c4c55d9'
             'ed490eab75c0ff3e2d9f1802c47478198725e9b16cfd03392f7f03d2d65b6fc2'
             '651ab1a6b9a643bfd725c43cbac28cf0299d9b9caaf583f3c33787b48e2c86d7'
             '49328dc461852111f343f95aeb132f26d116f1cd698c7600f7b0cd6ca21700ec'
-            'e515f1ace10b4e89967098794a1e704d4fa954d61dfe065f7e05f4842aebd66d'
+            '68b377243a3fcf3639ad7f2df1d97f1ef6f21bdf99567c6d34254f5e90428675'
             'e81ca5cc47200a2f4df2463a46316c7a8f9f462a1f7c9579cfeca0d970921863'
             '75a2d1228115f5bb6ff26530dbb60cc37a0ea82d03c1f19d37b5460a295afff1'
             '6cae89df8cd52c196b25457a9603423353013f85daf99f33465129437d470ac2'
