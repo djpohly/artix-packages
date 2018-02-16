@@ -29,9 +29,9 @@ pkgname=(
 #        'xinetd-runscripts'
 #        'kmod-runscripts'
 )
-pkgver=20180107
-pkgrel=1
-pkgdesc="Run scripts for services"
+pkgver=20180216
+pkgrel=2
+pkgdesc="daemontools-style service scripts for system repository"
 arch=('any')
 url="https://github.com/artix-linux"
 license=('BSD3')
@@ -62,10 +62,6 @@ source=(
         "https://github.com/gentoo/gentoo/raw/master/net-wireless/wpa_supplicant/files/wpa_cli.sh"
         "xinetd.run::${_url}/xinetd/files/xinetd/run"
 )
-
-pkgver() {
-    date +%Y%m%d
-}
 
 _inst_sv(){
     for file in run finish check; do
