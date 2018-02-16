@@ -1,0 +1,40 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
+_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
+
+pkgname=inetutils-openrc
+pkgver=20180216
+pkgrel=1
+pkgdesc="OpenRC ftpd init script"
+arch=('any')
+url="https://github.com/artix-linux/packages"
+license=('GPL2')
+groups=('openrc-system')
+depends=('openrc' 'inetutils')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/ftpd')
+source=('ftpd.confd'
+        'ftpd.initd')
+sha256sums=('59fe1aa68c43f4958afc397a0d6b35da263a20fcdb457005123a0d64cb1f7477'
+            '7f46e5e9ac9f204fb1564560c506a5bb4cede8823b89e3f1844e4f8be258e9ef')
+
+pkgver() {
+    date +%Y%m%d
+}
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd 'ftpd'
+    _inst_initd 'ftpd'
+}
