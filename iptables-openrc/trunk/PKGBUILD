@@ -1,0 +1,54 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
+_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
+
+pkgname=iptables-openrc
+pkgver=20180216
+pkgrel=1
+pkgdesc="OpenRC iptables init script"
+arch=('any')
+url="https://github.com/artix-linux/packages"
+license=('GPL2')
+groups=('openrc-system')
+depends=('openrc' 'iptables')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/iptables'
+        'etc/conf.d/ip6tables')
+source=("iptables.confd::${_url}/net-firewall/iptables/files/iptables-1.4.13.confd"
+        "ip6tables.confd::${_url}/net-firewall/iptables/files/ip6tables-1.4.13.confd"
+        "iptables.initd::${_url}/net-firewall/iptables/files/iptables-1.4.13-r1.init")
+sha256sums=('7e2341211ca14997b7a8a1f930f94db855291af597c568f680f80031c20d45b6'
+            '2938fe4206514d9868047bd8f888a699fa2097ca69edab176453436d4259abaa'
+            '2c9dcf73db7740350d41504633671e95287a349838acd5faa6d3b27418c9d6d0')
+
+pkgver() {
+    date +%Y%m%d
+}
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    local _sed_args=()
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd 'iptables'
+    _inst_initd 'iptables'
+
+    _inst_confd 'ip6tables'
+
+    install -Dm755 "${srcdir}/iptables.initd" "${pkgdir}/etc/init.d/ip6tables"
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/ip6tables
+}
