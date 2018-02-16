@@ -20,7 +20,7 @@ pkgname=(
 #         'mdadm-openrc'
 #         'nfs-utils-openrc'
 #         'rpcbind-openrc'
-        'elogind-openrc'
+#         'elogind-openrc'
 #         'gpm-openrc'
 #         'hdparm-openrc'
 #         'iptables-openrc'
