@@ -7,7 +7,7 @@ post_upgrade() {
 
 ==> If you had customized it, you need to rename it as
 ==> /etc/sysctl.d/99-sysctl.conf since from version 207 on
-==> only applies settings from /etc/sysctl.d/* .
+==> elogind only applies settings from /etc/sysctl.d/* .
 
 EOF
 	fi
