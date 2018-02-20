@@ -5,23 +5,36 @@ pkgname=js
 pkgver=24.2.0
 pkgrel=4
 pkgdesc="JavaScript interpreter and libraries"
-arch=(i686 x86_64)
+arch=(x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
 license=(MPL)
 depends=(nspr gcc-libs readline zlib)
 makedepends=(python2 zip libffi)
 options=(!staticlibs)
-source=(http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-$pkgver.tar.bz2)
-md5sums=('5db79c10e049a2dc117a6e6a3bc78a8e')
+source=(http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-$pkgver.tar.bz2
+        spidermonkey-24-system-icu.patch
+        spidermonkey-24-upward-growing-stack.patch
+        spidermonkey-24.2.0-fix-file-permissions.patch
+        spidermonkey-17-fix_pointer_dereference.patch
+        spidermonkey-perl-defined-array-check.patch)
+md5sums=('5db79c10e049a2dc117a6e6a3bc78a8e'
+         '4df9ad37fb533317f623809e1ba9d295'
+         '298c21c4dc5d323d3b03ac88b9542046'
+         '3717eacbb63159643edf067e151a0162'
+         '809c9cfe9db862772e7530f5dc8720a8'
+         '4791859c5ff1da71a3d11b5bf52b0e8f')
 
 prepare() {
-  cd mozjs-$pkgver/js/src
+    rm -r mozjs-$pkgver/js/src/editline
+    rm -r mozjs-$pkgver/js/src/ctypes/libffi
 
-  rm -r editline
-  rm -r ctypes/libffi
+    cd mozjs-$pkgver
 
-  # Fix incompatibility with Perl 5.22
-  sed -i 's/(defined\((@TEMPLATE_FILE)\))/\1/' config/milestone.pl
+    patch -Np 1 -i $srcdir/spidermonkey-24-system-icu.patch
+    patch -Np 1 -i $srcdir/spidermonkey-24-upward-growing-stack.patch
+    patch -Np 1 -i $srcdir/spidermonkey-24.2.0-fix-file-permissions.patch
+    patch -Np 1 -i $srcdir/spidermonkey-17-fix_pointer_dereference.patch
+    patch -Np 1 -i $srcdir/spidermonkey-perl-defined-array-check.patch
 }
 
 build() {
