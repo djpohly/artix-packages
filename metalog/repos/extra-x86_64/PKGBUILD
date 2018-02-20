@@ -12,9 +12,8 @@ arch=('x86_64')
 depends=('pcre')
 provides=('logger')
 backup=('etc/metalog.conf')
-source=("http://sourceforge.net/projects/metalog/files/metalog-3.tar.xz/download" 'metalog.service')
-md5sums=('6fe404e49764fa24108fd090417bacb5'
-         '42b8138e8868ecdf0616f73efca7b339')
+source=("http://sourceforge.net/projects/metalog/files/metalog-3.tar.xz")
+md5sums=('6fe404e49764fa24108fd090417bacb5')
 
 build() {
   cd $pkgname-3
