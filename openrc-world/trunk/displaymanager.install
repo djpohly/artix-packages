@@ -1,3 +1,0 @@
-post_install() {
-	echo "	==> Edit /etc/conf.d/xdm to set DM."
-}
