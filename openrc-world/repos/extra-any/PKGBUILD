@@ -38,7 +38,7 @@ pkgname=(
 #         'ypbind-mt-openrc'
 #         'ypserv-openrc'
 #         'wicd-openrc'
-          'nginx-openrc'
+#           'nginx-openrc'
 #         'brltty-openrc'
 #         'git-openrc'
 #         'mysql-openrc'
