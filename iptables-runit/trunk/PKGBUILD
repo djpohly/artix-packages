@@ -1,0 +1,35 @@
+# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+
+_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+
+_sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
+
+pkgname=iptables-runit
+pkgver=20180224
+pkgrel=1
+pkgdesc="runit service scripts for iptables"
+arch=('any')
+url="https://github.com/artix-linux"
+license=('BSD3')
+groups=('runit-system')
+depends=('iptables')
+provides=('iptables-runscripts')
+replaces=('iptables-runscripts')
+source=("iptables.run::${_url}/iptables/files/iptables/run"
+        "ip6tables.run::${_url}/iptables/files/ip6tables/run")
+sha256sums=('3a3ec37e1015e77b07e96895d17194187840fa9d6f012f9b3dfeeb4c052914d6'
+            '36399502b2e9ee05010ec3af54d79b5b9250f76bfd8bb5dcba02ad928350bb9d')
+
+_inst_sv(){
+    for file in run finish check; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'iptables'
+    _inst_sv 'ip6tables'
+}
