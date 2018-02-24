@@ -1,0 +1,32 @@
+# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+
+_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+
+_sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
+
+pkgname=lvm2-runit
+pkgver=20180224
+pkgrel=1
+pkgdesc="runit service scripts for lvm2"
+arch=('any')
+url="https://github.com/artix-linux"
+license=('BSD3')
+groups=('runit-system')
+depends=('lvm2')
+provides=('lvm2-runscripts')
+replaces=('lvm2-runscripts')
+source=("lvmetad.run::${_url}/lvm2/files/lvmetad/run")
+
+_inst_sv(){
+    for file in run finish check; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'lvmetad'
+}
+md5sums=('a8189ddaba03f16f971db606f36d7cd6')
