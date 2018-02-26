@@ -5,7 +5,7 @@ _url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=lvm2-runit
-pkgver=20180224
+pkgver=20180226
 pkgrel=1
 pkgdesc="runit service scripts for lvm2"
 arch=('any')
@@ -20,8 +20,8 @@ source=("lvmetad.run::${_url}/lvm2/files/lvmetad/run")
 _inst_sv(){
     for file in run finish check; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/sv/$1/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/sv/$1/$file"
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
         fi
     done
 }
