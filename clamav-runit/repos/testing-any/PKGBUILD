@@ -19,8 +19,8 @@ install='clamav-runit.install'
 provides=('clamav-runscripts')
 replaces=('clamav-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("clamd.run::${_url}/clamav/files/clamd/run")
-sha256sums=('8ab29771e3000314c7e356190db0a44b19de1b6865389811f4b8d8548725255a')
+source=("clamd.run")
+sha256sums=('05e8e08633db262e0e9aa2127e2591d07a68cbe2a393aa3e2a1daf1695f7b12c')
 
 _inst_logsv() {
     for file in run finish check; do
