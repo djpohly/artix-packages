@@ -5,7 +5,7 @@ _url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=bluez-runit
-pkgver=20180224
+pkgver=20180226
 pkgrel=1
 pkgdesc="runit service scripts for bluez"
 arch=('any')
@@ -24,21 +24,21 @@ sha256sums=('8ab29771e3000314c7e356190db0a44b19de1b6865389811f4b8d8548725255a')
 _inst_logsv() {
     for file in run finish check; do
         if test -f "$srcdir/log$1.$file"; then
-            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/sv/$1/log/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/sv/$1/log/$file"
+            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/runit/sv/$1/log/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/log/$file"
         fi
     done
 }
 
 _inst_sv() {
     if test -f "$srcdir/$1.conf"; then
-        install -Dm644 "$srcdir/$1.conf" "$pkgdir/etc/sv/$1/conf"
+        install -Dm644 "$srcdir/$1.conf" "$pkgdir/etc/runit/sv/$1/conf"
     fi
 
     for file in run finish check; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/sv/$1/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/sv/$1/$file"
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
         fi
     done
 }
