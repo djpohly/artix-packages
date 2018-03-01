@@ -6,7 +6,7 @@ _url="https://github.com/OpenRC/openrc/archive"
 
 pkgbase=openrc
 pkgname=('openrc' 'openrc-bash-completions' 'openrc-zsh-completions')
-pkgver=0.35
+pkgver=0.35.1
 pkgrel=1
 arch=('i686' 'x86_64' 'armv7h')
 url="http://www.gentoo.org/proj/en/base/openrc/"
@@ -21,7 +21,7 @@ source=("${pkgbase}-${pkgver}.tar.gz::${_url}/${pkgver}.tar.gz"
         "${pkgbase}.logrotate"
         'openrc-install.hook'
         'openrc-remove.hook')
-sha256sums=('6b0e0e3cbe9aa888cfc1408a708f0e881cf99fe283cc08ed946540dc4e407e2d'
+sha256sums=('63e7c0ce112bbf51ed39557b3eb44448a06725ac75aee01bb89d7f0232a5b500'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '1d4d31a7275660e7b23778e6fceb0714cab8ed2793b04aa004b01d8e7bcd43bd'
             'cbb4d00262a55a508114cb31e3903350be2cff748a4fb5e120dc745292e3987e')
