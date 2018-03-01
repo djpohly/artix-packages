@@ -42,5 +42,5 @@ package() {
   #install license file
   install -D -m 644 LICENSE.TXT $pkgdir/usr/share/licenses/hdparm/LICENSE.TXT
 }
-md5sums=('3c160eab5783c1d2fbf40f86333f7fcf'
+md5sums=('cb530d737c8f2d1023797cf0587b4e05'
          '74e368f384166a7710b447573cda120a')
