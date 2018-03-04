@@ -75,7 +75,7 @@ package_dbus() {
   install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgbase/COPYING"
 
   # We have a pre-assigned uid (81)
-  install -m644 "$srcdir/dbus.sysusers" "$pkgdir/usr/lib/sysusers.d/dbus.conf"
+  install -Dm644 "$srcdir/dbus.sysusers" "$pkgdir/usr/lib/sysusers.d/dbus.conf"
 
   # Split docs
   mv "$pkgdir/usr/share/doc" "$srcdir"
