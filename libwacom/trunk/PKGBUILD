@@ -3,12 +3,12 @@
 
 pkgname=libwacom
 pkgver=0.28
-pkgrel=2
+pkgrel=3
 pkgdesc="Library to identify Wacom tablets and their features"
 arch=('x86_64')
 url="http://linuxwacom.sourceforge.net/wiki/index.php/Libwacom"
 license=('MIT')
-depends=('glib2' 'systemd' 'libgudev')
+depends=('glib2' 'eudev' 'libgudev')
 validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF')
 source=(https://sourceforge.net/projects/linuxwacom/files/libwacom/$pkgname-$pkgver.tar.bz2{,.sig}
         fix-pairedid-entry.patch)
@@ -41,5 +41,5 @@ package() {
   install -m755 -d ${pkgdir}/usr/lib/udev/rules.d
   cd tools
   ./generate-udev-rules > ${pkgdir}/usr/lib/udev/rules.d/65-libwacom.rules
-  
+
 }
