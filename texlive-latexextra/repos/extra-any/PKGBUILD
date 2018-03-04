@@ -3,7 +3,7 @@
 # Maintainer: Rémy Oudompheng <remy@archlinux.org>
 
 pkgname=texlive-latexextra
-pkgver=2017.45733
+pkgver=2017.46778
 _revnr=${pkgver#2017.}
 pkgrel=1
 pkgdesc="TeX Live - Large collection of add-on packages for LaTeX"
@@ -16,13 +16,14 @@ optdepends=(
   'texlive-genericextra: to use the calctab package'
   'texlive-pictures: to use the package overpic'
   'java-environment: to use pdfannotextractor'
+  'python2-pygments: to use pygmentex'
 )
 groups=('texlive-most')
 url='http://tug.org/texlive/'
 source=("https://sources.archlinux.org/other/texlive/$pkgname-$pkgver-src.zip"
         "$pkgname.maps")
 options=('!emptydirs')
-sha256sums=('20360e1a799c237653caa1d66e4a3811b58520421633611c96ff812be93f6c36'
+sha256sums=('5059ee7d9df07f0da3ad04a818cf210554cedc80cb0fa69e5d6c88bde2f7c105'
             'd53750a03a52472a1c7c5ba5142959ba382a5d69215471691c0b12c3663950ce')
 
 build() {
@@ -60,6 +61,7 @@ glossaries/makeglossaries-lite.lua
 makedtx/makedtx.pl
 pax/pdfannotextractor.pl
 perltex/perltex.pl
+pygmentex/pygmentex.py
 splitindex/splitindex.pl
 svn-multi/svn-multi.pl
 vpe/vpe.pl
