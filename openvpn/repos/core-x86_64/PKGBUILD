@@ -2,7 +2,7 @@
 # Maintainer: Christian Hesse <mail@eworm.de>
 
 pkgname=openvpn
-pkgver=2.4.4
+pkgver=2.4.5
 pkgrel=1
 pkgdesc='An easy-to-use, robust and highly configurable VPN (Virtual Private Network)'
 arch=('i686' 'x86_64')
@@ -63,4 +63,3 @@ package() {
     esac
   done
 }
-
