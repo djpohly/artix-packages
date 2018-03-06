@@ -5,7 +5,7 @@
 pkgbase=linux               # Build stock -ARTIX kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _srcname=linux-4.15
-pkgver=4.15.5
+pkgver=4.15.7
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -28,7 +28,7 @@ validpgpkeys=(
 )
 sha256sums=('5a26478906d5005f4f809402e981518d2b8844949199f60c4b6e1f986ca2a769'
             'SKIP'
-            'b5dc7021bd0c08e4a58b59035f9b757ce6909b46067950ac56d2ad68c1b69dd1'
+            '0dad200b26837acd0340dfe18d9610467c111df5719440248cd8be6fb8d6dd02'
             'SKIP'
             'c5eff99152185b646636f3cfcb6c963e6a09bcbbda170a62211e82e9b228750f'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
