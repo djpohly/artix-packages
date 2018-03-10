@@ -24,11 +24,11 @@ build() {
   make
 }
 
-check() {
-  cd ${pkgname}-${pkgver}
-
-  [[ $CARCH = "i686" ]] || make check
-}
+# check() {
+#   cd ${pkgname}-${pkgver}
+#
+#   [[ $CARCH = "i686" ]] || make check
+# }
 
 package() {
   cd ${pkgname}-${pkgver}
