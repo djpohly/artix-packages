@@ -52,10 +52,10 @@ build() {
   make
 }
 
-check() {
-  cd glib
-  make check
-}
+# check() {
+#   cd glib
+#   make check
+# }
 
 package_glib2() {
   cd glib
