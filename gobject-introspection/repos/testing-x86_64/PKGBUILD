@@ -1,4 +1,3 @@
-# $Id$
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgbase=gobject-introspection
@@ -25,7 +24,7 @@ prepare() {
   cd $pkgbase
   NOCONFIGURE=1 ./autogen.sh
 }
-  
+
 build() {
   cd $pkgbase
   ./configure --prefix=/usr --disable-static --enable-doctool --enable-gtk-doc
