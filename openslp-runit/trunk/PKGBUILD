@@ -6,7 +6,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=openslp-runit
 pkgver=20180226
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for openslp"
 arch=('any')
 url="https://github.com/artix-linux"
