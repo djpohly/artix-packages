@@ -7,7 +7,7 @@ _url="https://github.com/OpenRC/openrc/archive"
 pkgbase=openrc
 pkgname=('openrc' 'openrc-bash-completions' 'openrc-zsh-completions')
 pkgver=0.35.3
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64' 'armv7h')
 url="http://www.gentoo.org/proj/en/base/openrc/"
 license=('BSD2')
@@ -38,6 +38,7 @@ _args=(
     MKSYSVINIT=yes
     MKBASHCOMP=yes
     MKZSHCOMP=yes
+    MKPKGCONFIG=yes
 )
 
 if [ -f /usr/lib/os-release ]; then
@@ -49,7 +50,6 @@ fi
 
 prepare(){
     cd "${srcdir}/${pkgbase}-${pkgver}"
-    sed -e "s|/sbin|/usr/bin|g" -i support/sysvinit/inittab
     sed -i 's:0444:0644:' mk/sys.mk
 }
 
