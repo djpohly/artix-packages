@@ -35,7 +35,7 @@ prepare() {
   # Suppress noise from glib-compile-schemas.hook
   patch -Np1 -i ../noisy-glib-compile-schemas.diff
 
-  sed -i -e "/appinfo\/launch/d" gio/tests/appinfo.c
+  #sed -i -e "/appinfo\/launch/d" gio/tests/appinfo.c
 
   NOCONFIGURE=1 ./autogen.sh
 }
@@ -57,10 +57,10 @@ build() {
   make
 }
 
-check() {
-  cd glib
-  make check
-}
+# check() {
+#   cd glib
+#   make check
+# }
 
 package_glib2() {
   cd glib
