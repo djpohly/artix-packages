@@ -15,7 +15,7 @@ depends=(mjpegtools gst-plugins-base-libs curl chromaprint libmms faad2 celt lib
          libfdk-aac faac soundtouch spandsp neon webrtc-audio-processing libdc1394 libmpcdec zvbi
          openexr libbs2b libnice lcms2 bluez-libs flite glu)
 makedepends=(python gtk-doc autoconf-archive git gobject-introspection gtk3 vulkan-headers
-             vulkan-validation-layers librsvg libtiger zbar fluidsynth lilv opencv)
+             vulkan-validation-layers librsvg libtiger zbar fluidsynth lilv opencv libpcap)
 _commit=16b9e1e444519fc72bbb42f76f2dc1e386e5a1be  # master
 source=("git+https://anongit.freedesktop.org/git/gstreamer/gst-plugins-bad#commit=$_commit"
         "gst-common::git+https://anongit.freedesktop.org/git/gstreamer/common")
