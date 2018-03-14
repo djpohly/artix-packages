@@ -1,4 +1,3 @@
-# $Id$
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 # Contributor: Chris Severance aur.severach aATt spamgourmet dott com
@@ -30,7 +29,7 @@ package(){
      BINDIR="${pkgdir}/usr/bin" \
      DESTDIR="${pkgdir}/usr/share/sgml/docbook/dsssl-stylesheets-${pkgver}" \
      MANDIR="${pkgdir}/usr/share/man"
-  
+
   ln -s dsssl-stylesheets-${pkgver} ${pkgdir}/usr/share/sgml/docbook/dsssl-stylesheets
   # license
   install -Dm644 README "$pkgdir/usr/share/licenses/$pkgname/COPYING"
