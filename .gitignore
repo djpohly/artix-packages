@@ -12,3 +12,4 @@ linux-lts.install.pkg
 iptables-flush
 *.log
 *-i686
+*.socket
