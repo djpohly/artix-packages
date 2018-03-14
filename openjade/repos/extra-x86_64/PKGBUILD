@@ -1,4 +1,3 @@
-# $Id$
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=openjade
@@ -40,18 +39,18 @@ build() {
 
 package() {
   cd ${pkgname}-$pkgver
-  make DESTDIR="$pkgdir/" install install-man 
-  
+  make DESTDIR="$pkgdir/" install install-man
+
   # add unversioned symlink
   ln -svf openjade-${pkgver} ${pkgdir}/usr/share/sgml/openjade
-  
+
   # openjade -> jade compat symlinks
   ln -svf /usr/bin/openjade $pkgdir/usr/bin/jade
   ln -svf /usr/lib/libogrove.so $pkgdir/usr/lib/libgrove.so
   ln -svf /usr/lib/libospgrove.so $pkgdir/usr/lib/libspgrove.so
   ln -svf /usr/lib/libostyle.so $pkgdir/usr/lib/libstyle.so
   ln -svf /usr/share/man/man1/openjade.1.gz $pkgdir/usr/share/man/man1/jade.1.gz
-  
+
   # license
   install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
