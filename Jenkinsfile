@@ -60,7 +60,9 @@ pipeline {
 
                             if ( pkgStatus[0] == 'M' ) {
                                 IS_ADD = 'true'
-                                if ( srcPath[0].contains('testing') ) {
+                                if ( srcPath[0].contains('staging') ) {
+                                    ADD_REPO = 'goblins'
+                                } else if ( srcPath[0].contains('testing') ) {
                                     ADD_REPO = 'gremlins'
                                 } else if ( srcPath[0].contains('core') ) {
                                     ADD_REPO = 'system'
@@ -69,10 +71,12 @@ pipeline {
                                 }
                             } else if ( pkgStatus[1] == 'M' ) {
                                 IS_ADD = 'true'
-                                if ( srcPath[1].contains('testing') ) {
+                                if ( srcPath[1].contains('staging') ) {
+                                    ADD_REPO = 'goblins'
+                                } else if ( srcPath[1].contains('testing') ) {
                                     ADD_REPO = 'gremlins'
                                 } else if ( srcPath[1].contains('core') ) {
-                                    ADD_REPO = ''
+                                    ADD_REPO = 'system'
                                 } else if ( srcPath[1].contains('extra') ) {
                                     ADD_REPO = 'world'
                                 }
@@ -80,7 +84,9 @@ pipeline {
 
                             if ( pkgStatus[0] == 'D' ) {
                                 IS_REMOVE = 'true'
-                                if ( srcPath[0].contains('testing') ) {
+                                if ( srcPath[0].contains('staging') ) {
+                                    RM_REPO = 'goblins'
+                                } else if ( srcPath[0].contains('testing') ) {
                                     RM_REPO = 'gremlins'
                                 } else if ( srcPath[0].contains('core') ) {
                                     RM_REPO = 'system'
@@ -89,7 +95,9 @@ pipeline {
                                 }
                             } else if ( pkgStatus[1] == 'D' ) {
                                 IS_REMOVE = 'true'
-                                if ( srcPath[1].contains('testing') ) {
+                                if ( srcPath[1].contains('staging') ) {
+                                    RM_REPO = 'goblins'
+                                } else if ( srcPath[1].contains('testing') ) {
                                     RM_REPO = 'gremlins'
                                 } else if ( srcPath[1].contains('core') ) {
                                     RM_REPO = 'system'
