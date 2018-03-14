@@ -1,11 +1,9 @@
-# vim: set ts=2 sw=2 et:
-# $Id$
 # Maintainer: Dan McGee <dan@archlinux.org>
 # Maintainer: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=pacman
 pkgver=5.0.2
-pkgrel=11
+pkgrel=12
 pkgdesc="A library-based package manager with dependency support"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org/pacman/"
@@ -29,8 +27,8 @@ source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.gz{,.sig
         use-system-repo-as-default.patch)
 sha256sums=('dfd36086ad68564bcd977f4a1fafe51dd328acd4a95093ac4bf1249be9c41f0e'
             'SKIP'
-            '42390c5703fb5114362003ed3390e2513c39237a9a384a79594b3d9c46c1f95f'
-            'b9256372a89b58fd26cd5a65cfd95ce6f6ca496a483e338ab4cb48e28a9a3e61'
+            '081419b70448fbcedf6bb9357451a635afd818a159011125204b4fc49574153c'
+            '6554a672c8bc877cff0a5ea75fc68c09597a8d264d94260a9c42e49834c2ce5f'
             '56a016d6a5404ab6dd7b8fd39027ef422dd14ad07c768853863a1e03dcc9a3e0'
             '78bbb65a9ba6df0a5645025f5dcd0486b1b787ddde3658ee68dd5782ff47ba04')
 
