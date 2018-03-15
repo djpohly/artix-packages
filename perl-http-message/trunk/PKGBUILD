@@ -1,0 +1,37 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Justin "juster" Davis <jrcd83@gmail.com>
+# Generator : pbjam 0.01
+
+pkgname=perl-http-message
+pkgver=6.15
+pkgrel=1
+pkgdesc="HTTP style messages"
+arch=('any')
+url='http://search.cpan.org/dist/HTTP-Message'
+license=('PerlArtistic' 'GPL')
+options=('!emptydirs')
+depends=('perl' 'perl-encode-locale' 'perl-http-date' 'perl-lwp-mediatypes' 'perl-uri'
+         'perl-io-html')
+makedepends=('perl-try-tiny')
+conflicts=('perl-libwww<6')
+source=("http://search.cpan.org/CPAN/authors/id/O/OA/OALDERS/HTTP-Message-$pkgver.tar.gz")
+sha512sums=('6d585b8f676b6ffcb53c3dbef641b7f53d6f99e97a15cfef67f01683029db7a21cb875ad350c1c9befe0a67cbc650d2d9422023ebb8b291077a6f8713f9e61b4')
+
+build() {
+  cd HTTP-Message-$pkgver
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check() {
+  cd HTTP-Message-$pkgver
+  make test
+}
+
+package() {
+  cd HTTP-Message-$pkgver
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:
