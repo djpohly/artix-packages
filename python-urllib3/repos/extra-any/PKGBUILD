@@ -19,13 +19,15 @@ checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-tornado' 'p
               'python-nose' 'python2-nose' 'python-psutil' 'python2-psutil'
               'python-gcp-devrel-py-tools' 'python2-gcp-devrel-py-tools')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/shazow/urllib3/archive/$pkgver.tar.gz"
-        tornado-4.3.patch)
+        tornado-4.3.patch
+        recent_date.patch::https://github.com/shazow/urllib3/pull/1304/commits/4bff1e93d2dd4663d422d7e290473d9189cec5db.patch)
 sha512sums=('1b45a4a64e71847a4fc62b9263235d5b05b62076698fa324454efeb7ad065abd702cc9eadb2d396d9270b07e91e9bad94c52a4b9b115aadccb27f81955e6feab'
-            '7c09acefa963a80379f8b2f3f2c2c7546ec62025058c1ae024bc954d49392d7956b8b3ceaed40b3d3ab06bcf9c74bfb4214425b66cc55c50ffc2642e2d35c498')
+            '7c09acefa963a80379f8b2f3f2c2c7546ec62025058c1ae024bc954d49392d7956b8b3ceaed40b3d3ab06bcf9c74bfb4214425b66cc55c50ffc2642e2d35c498'
+            '739322bd5e9e85106fe2447d764e06a902b99c6f0aca5887f0b4c1f17ba0b0efc3ca1bf1be0fed6952e6bc6c0ca5f3f119c9d0371542d9c4ae3dd263d401c827')
 
 prepare() {
   # https://github.com/shazow/urllib3/pull/1236
-  (cd urllib3-$pkgver; patch -p1 -i ../tornado-4.3.patch)
+  (cd urllib3-$pkgver; patch -p1 -i ../tornado-4.3.patch; patch -p1 -i ../recent_date.patch)
 
   cp -a urllib3-$pkgver{,-py2}
 }
