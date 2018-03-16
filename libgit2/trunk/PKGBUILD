@@ -1,7 +1,6 @@
 # Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Hilton Medeiros <medeiros.hilton@gmail.com>
 # Contributor: Dave Reisner <d@falconindy.com>
-
 pkgname=libgit2
 pkgver=0.26.0
 pkgrel=1
