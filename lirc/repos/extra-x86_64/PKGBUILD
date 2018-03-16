@@ -1,5 +1,4 @@
 # Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
-# Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=lirc
 _pkgver=0.9.4d
