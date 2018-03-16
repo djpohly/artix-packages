@@ -57,51 +57,53 @@ pipeline {
                             pkgStatus << pkgEntry2[0]
                             def buildInfo1 = srcPath[0].tokenize('/')
                             def buildInfo2 = srcPath[1].tokenize('/')
+                            def repoName1 = buildInfo1[2]
+                            def repoName2 = buildInfo2[2]
 
                             if ( pkgStatus[0] == 'M' ) {
                                 IS_ADD = 'true'
-                                if ( srcPath[0].contains('staging') ) {
+                                if ( repoName1.contains('staging') ) {
                                     ADD_REPO = 'goblins'
-                                } else if ( srcPath[0].contains('testing') ) {
+                                } else if ( repoName1.contains('testing') ) {
                                     ADD_REPO = 'gremlins'
-                                } else if ( srcPath[0].contains('core') ) {
+                                } else if ( repoName1.contains('core') ) {
                                     ADD_REPO = 'system'
-                                } else if ( srcPath[0].contains('extra') ) {
+                                } else if ( repoName1.contains('extra') ) {
                                     ADD_REPO = 'world'
                                 }
                             } else if ( pkgStatus[1] == 'M' ) {
                                 IS_ADD = 'true'
-                                if ( srcPath[1].contains('staging') ) {
+                                if ( repoName2.contains('staging') ) {
                                     ADD_REPO = 'goblins'
-                                } else if ( srcPath[1].contains('testing') ) {
+                                } else if ( repoName2.contains('testing') ) {
                                     ADD_REPO = 'gremlins'
-                                } else if ( srcPath[1].contains('core') ) {
+                                } else if ( repoName2.contains('core') ) {
                                     ADD_REPO = 'system'
-                                } else if ( srcPath[1].contains('extra') ) {
+                                } else if ( repoName2.contains('extra') ) {
                                     ADD_REPO = 'world'
                                 }
                             }
 
                             if ( pkgStatus[0] == 'D' ) {
                                 IS_REMOVE = 'true'
-                                if ( srcPath[0].contains('staging') ) {
+                                if ( repoName1.contains('staging') ) {
                                     RM_REPO = 'goblins'
-                                } else if ( srcPath[0].contains('testing') ) {
+                                } else if ( repoName1.contains('testing') ) {
                                     RM_REPO = 'gremlins'
-                                } else if ( srcPath[0].contains('core') ) {
+                                } else if ( repoName1.contains('core') ) {
                                     RM_REPO = 'system'
-                                } else if ( srcPath[0].contains('extra') ) {
+                                } else if ( repoName1.contains('extra') ) {
                                     RM_REPO = 'world'
                                 }
                             } else if ( pkgStatus[1] == 'D' ) {
                                 IS_REMOVE = 'true'
-                                if ( srcPath[1].contains('staging') ) {
+                                if ( repoName2.contains('staging') ) {
                                     RM_REPO = 'goblins'
-                                } else if ( srcPath[1].contains('testing') ) {
+                                } else if ( repoName2.contains('testing') ) {
                                     RM_REPO = 'gremlins'
-                                } else if ( srcPath[1].contains('core') ) {
+                                } else if ( repoName2.contains('core') ) {
                                     RM_REPO = 'system'
-                                } else if ( srcPath[1].contains('extra') ) {
+                                } else if ( repoName2.contains('extra') ) {
                                     RM_REPO = 'world'
                                 }
                             }
@@ -114,39 +116,41 @@ pipeline {
                             def pkgStatus = pkgEntry[0]
                             def buildInfo1 = pkgPath[0].tokenize('/')
                             def buildInfo2 = pkgPath[1].tokenize('/')
+                            def repoName1 = buildInfo1[2]
+                            def repoName2 = buildInfo2[2]
 
                             if ( pkgStatus.contains('R') ) {
                                 IS_ADD = 'true'
                                 IS_REMOVE = 'true'
 
-                                if ( pkgPath[0].contains('staging') && pkgPath[1].contains('testing') ) {
+                                if ( repoName1.contains('staging') && repoName2.contains('testing') ) {
                                     ADD_REPO = 'gremlins'
                                     RM_REPO = 'goblins'
-                                } else if ( pkgPath[0].contains('testing') && pkgPath[1].contains('staging') ) {
+                                } else if ( repoName1.contains('testing') && repoName2.contains('staging') ) {
                                     ADD_REPO = 'goblins'
                                     RM_REPO = 'gremlins'
                                 }
 
-                                if ( pkgPath[0].contains('core') && pkgPath[1].contains('testing')) {
+                                if ( repoName1.contains('core') && repoName2.contains('testing')) {
                                     ADD_REPO = 'gremlins'
                                     RM_REPO = 'system'
-                                } else if ( pkgPath[0].contains('testing') && pkgPath[1].contains('core')) {
+                                } else if ( repoName1.contains('testing') && repoName2.contains('core')) {
                                     ADD_REPO = 'system'
                                     RM_REPO = 'gremlins'
                                 }
 
-                                if ( pkgPath[0].contains('extra') && pkgPath[1].contains('testing')) {
+                                if ( repoName1.contains('extra') && repoName2.contains('testing')) {
                                     ADD_REPO = 'gremlins'
                                     RM_REPO = 'world'
-                                } else if ( pkgPath[0].contains('testing') && pkgPath[1].contains('extra')) {
+                                } else if ( repoName1.contains('testing') && repoName2.contains('extra')) {
                                     ADD_REPO = 'world'
                                     RM_REPO = 'gremlins'
                                 }
 
-                                if ( pkgPath[0].contains('core') && pkgPath[1].contains('extra')) {
+                                if ( repoName1.contains('core') && repoName2.contains('extra')) {
                                     ADD_REPO = 'world'
                                     RM_REPO = 'system'
-                                } else if ( pkgPath[0].contains('extra') && pkgPath[1].contains('core')) {
+                                } else if ( repoName1.contains('extra') && repoName2.contains('core')) {
                                     ADD_REPO = 'system'
                                     RM_REPO = 'world'
                                 }
@@ -159,8 +163,9 @@ pipeline {
                             def pkgStatus = pkgEntry[0]
                             def srcPath = pkgEntry[1]
                             def buildInfo = srcPath.tokenize('/')
+                            def repoName = buildInfo[2]
 
-                            if ( srcPath.contains('staging') ) {
+                            if ( repoName.contains('staging') ) {
                                 if ( pkgStatus == 'A' || pkgStatus == 'M' ) {
                                     IS_BUILD = 'true'
                                 }
@@ -169,7 +174,7 @@ pipeline {
                                 }
                                 ADD_REPO = 'goblins'
                                 RM_REPO = ADD_REPO
-                            } else if ( srcPath.contains('testing') ) {
+                            } else if ( repoName.contains('testing') ) {
                                 if ( pkgStatus == 'A' || pkgStatus == 'M' ) {
                                     IS_BUILD = 'true'
                                 }
@@ -178,7 +183,7 @@ pipeline {
                                 }
                                 ADD_REPO = 'gremlins'
                                 RM_REPO = ADD_REPO
-                            } else if ( srcPath.contains('core') ) {
+                            } else if ( repoName.contains('core') ) {
                                 if ( pkgStatus == 'A' || pkgStatus == 'M' ) {
                                     IS_BUILD = 'true'
                                 }
@@ -187,7 +192,7 @@ pipeline {
                                 }
                                 ADD_REPO = 'system'
                                 RM_REPO = ADD_REPO
-                            } else if ( srcPath.contains('extra') ) {
+                            } else if ( repoName.contains('extra') ) {
                                 if ( pkgStatus == 'A' || pkgStatus == 'M' ) {
                                     IS_BUILD = 'true'
                                 }
