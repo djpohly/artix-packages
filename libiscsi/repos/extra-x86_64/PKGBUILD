@@ -1,6 +1,6 @@
-# $Id$
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Patryk Kowalczyk <patryk@kowalczyk.ws>
+
 pkgname=libiscsi
 pkgver=1.17.0
 pkgrel=2
@@ -16,7 +16,7 @@ md5sums=('SKIP')
 build() {
   cd "${srcdir}/${pkgname}"
   ./autogen.sh
-  ./configure --prefix=/usr --disable-static --libdir=/usr/lib 
+  ./configure --prefix=/usr --disable-static --libdir=/usr/lib
   make
 }
 
