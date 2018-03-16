@@ -1,6 +1,7 @@
 # Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Hilton Medeiros <medeiros.hilton@gmail.com>
 # Contributor: Dave Reisner <d@falconindy.com>
+
 pkgname=libgit2
 pkgver=0.26.0
 pkgrel=1
@@ -12,7 +13,7 @@ depends=(zlib openssl libssh2 curl)
 makedepends=(cmake python)
 license=('GPL2')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/libgit2/libgit2/archive/v${pkgver}.tar.gz")
-sha1sums=('7e9792e3d2ee88719f0d7cb59737256bfc1cddbb')
+sha1sums=('d4e44fcf3ada97caeaa3ab698105c107600bb3ab')
 
 build() {
   cd "$pkgname-$pkgver"
