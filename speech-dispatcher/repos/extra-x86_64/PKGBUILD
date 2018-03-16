@@ -10,10 +10,8 @@ pkgdesc="High-level device independent layer for speech synthesis interface"
 url="http://www.freebsoft.org/speechd"
 license=('GPL2' 'FDL')
 makedepends=('intltool' 'espeak' 'libltdl' 'python-xdg' 'dotconf' 'libpulse' 'libao')
-source=("https://www.freebsoft.org/pub/projects/speechd/$pkgname-$pkgver.tar.gz"
-        'speech-dispatcherd.service')
-sha512sums=('7c7b9bf9b9ce541e790b5ae396cb614616c6b3883e75c0258603e91bf679850e3d63a6251daa3a1819b30d7518e3f552c83fe87b006274ffe1aa0f7e19c0b99b'
-            '73eb563003b03f4836b17af66335664050d1dc3bd8434be368cd09ff8933aa2adc4bd17c4ce5c1bbbd406a0b0880191426a679fa05eac0a30f4005eaeeb47340')
+source=("https://www.freebsoft.org/pub/projects/speechd/$pkgname-$pkgver.tar.gz")
+sha512sums=('7c7b9bf9b9ce541e790b5ae396cb614616c6b3883e75c0258603e91bf679850e3d63a6251daa3a1819b30d7518e3f552c83fe87b006274ffe1aa0f7e19c0b99b')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -54,7 +52,6 @@ package_speech-dispatcher() {
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
 
-  install -Dm644 "${srcdir}"/speech-dispatcherd.service "${pkgdir}/usr/lib/systemd/system/speech-dispatcherd.service"
   install -d "${pkgdir}/var/log/speech-dispatcher"
 
   sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "${pkgdir}/usr/lib/pkgconfig/speech-dispatcher.pc"
