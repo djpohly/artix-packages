@@ -1,0 +1,29 @@
+# Maintainer: artoo <artoo@cromnix.org>
+# Contributor: Philip Müller <philm[at]manjaro[dog]org>
+
+_repo=desktop-presets
+
+pkgbase=artix-artwork
+pkgname=('artix-icons' 'artix-backgrounds')
+pkgver=0.6.1
+pkgrel=1
+arch=('any')
+url="https://github.com/artix-linux/desktop-presets"
+license=('GPL')
+makedepends=('git')
+source=("${_repo}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('9ac7d9e5d112702eecde79b9ec960dee9a41e6c4a465c9ea32da26c80b3a2ec4')
+
+package_artix-backgrounds(){
+    pkgdesc='Artix backgrounds'
+
+    cd ${_repo}-${pkgver}
+    make PREFIX=/usr DESTDIR=${pkgdir} install_backgrounds
+}
+
+package_artix-icons(){
+    pkgdesc='Artix icons'
+
+    cd ${_repo}-${pkgver}
+    make PREFIX=/usr DESTDIR=${pkgdir} install_icons
+}
