@@ -19,6 +19,12 @@ source=(ftp://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.gz)
 md5sums=('e66a9c9af6a60dc46134fdacf6ce97d7')
 sha1sums=('ff1190db8de279f950c242c6f4c5d5cdc2cbdc49')
 
+prepare(){
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    sed -i '/ top.do_check ==/s/top.do_check/*&/' modules/filter/tex.cpp
+    sed -i '/word ==/s/word/*&/'                  prog/check_funs.cpp
+}
+
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
   ./configure --prefix=/usr --sysconfdir=/etc

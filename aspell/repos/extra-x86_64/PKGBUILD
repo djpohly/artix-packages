@@ -1,3 +1,4 @@
+# $Id$
 # Maintainer: Felix Yan <felixonmars@gmail.com>
 # Contributor: Jochem Kossen <j.kossen@home.nl>
 # Contributor: dorphell <dorphell@archlinux.org>
@@ -9,7 +10,7 @@ pkgver=0.60.6.1
 _pkgmajorver=0.60
 pkgrel=5
 pkgdesc="A spell checker designed to eventually replace Ispell"
-arch=('i686' 'x86_64')
+arch=('x86_64')
 url="http://aspell.net/"
 license=('LGPL')
 depends=('gcc-libs' 'ncurses')
@@ -17,6 +18,12 @@ optdepends=('perl: to import old dictionaries')
 source=(ftp://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.gz)
 md5sums=('e66a9c9af6a60dc46134fdacf6ce97d7')
 sha1sums=('ff1190db8de279f950c242c6f4c5d5cdc2cbdc49')
+
+prepare(){
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    sed -i '/ top.do_check ==/s/top.do_check/*&/' modules/filter/tex.cpp
+    sed -i '/word ==/s/word/*&/'                  prog/check_funs.cpp
+}
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
