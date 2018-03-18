@@ -18,8 +18,7 @@ source=("http://www.thekelleys.org.uk/$pkgname/$pkgname-$pkgver.tar.xz"{,.asc}
         'dnsmasq-sysusers.conf')
 sha256sums=('78ad74f5ca14fd85a8bac93f764cd9d60b27579e90eabd3687ca7b030e67861f'
             'SKIP'
-            '7f6ff6a709038ae580758f4b6a754451d7f7ce22957b88a36b97f7b643d3c2ab'
-            '983a3c7a68ce114cf7b44f0d9c59b74c266647a9e5ac34c1d1d5161610bc57fe')
+            '7f6ff6a709038ae580758f4b6a754451d7f7ce22957b88a36b97f7b643d3c2ab')
 
 _build_copts="-DHAVE_DNSSEC -DHAVE_DBUS -DHAVE_IDN -DHAVE_CONNTRACK"
 
