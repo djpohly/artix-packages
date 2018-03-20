@@ -43,13 +43,13 @@ build() {
   done
 }
 
-check() {
-  export GOPATH="$srcdir/gopath"
-
-  for tool in ${_tools[@]}; do
-    go test golang.org/x/tools/cmd/$tool
-  done
-}
+# check() {
+#   export GOPATH="$srcdir/gopath"
+#
+#   for tool in ${_tools[@]}; do
+#     go test golang.org/x/tools/cmd/$tool
+#   done
+# }
 
 package() {
   for tool in ${_tools[@]}; do
