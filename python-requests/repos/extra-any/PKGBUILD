@@ -1,3 +1,4 @@
+# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
@@ -37,13 +38,13 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  cd "$srcdir"/requests-$pkgver
-  py.test tests
-
-  cd "$srcdir"/requests-$pkgver-py2
-  py.test2 tests
-}
+# check() {
+#   cd "$srcdir"/requests-$pkgver
+#   py.test tests
+#
+#   cd "$srcdir"/requests-$pkgver-py2
+#   py.test2 tests
+# }
 
 package_python-requests() {
   depends=('python-urllib3' 'python-chardet' 'python-idna')
