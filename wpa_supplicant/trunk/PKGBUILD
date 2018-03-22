@@ -37,6 +37,9 @@ sha256sums=('b4936d34c4e6cdd44954beba74296d964bc2c9668ecaa5255e499636fe2b1450'
             'c5a17af84aec2d88c56ce0da2d6945be398fe7cab5c0c340deb30973900c2736'
             '51a969416c1f5dfd5e356096e7e89e428c5f29542989b14b8c9f8d3398f726e6')
 
+source+=('include_dir.patch')
+sha256sums+=('3e869999b534d402bafab58f9887feccb7ff9f8251a53767d6e690c8a1f6a1ae')
+
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
   local i; for i in "${source[@]}"; do

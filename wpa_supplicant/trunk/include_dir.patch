@@ -1,0 +1,236 @@
+diff -ru wpa_supplicant-2.6.orig/wpa_supplicant/config.c wpa_supplicant-2.6/wpa_supplicant/config.c
+--- wpa_supplicant-2.6.orig/wpa_supplicant/config.c	2016-10-02 13:51:11.000000000 -0500
++++ wpa_supplicant-2.6/wpa_supplicant/config.c	2018-03-20 16:31:03.989639736 -0500
+@@ -7,6 +7,8 @@
+  */
+ 
+ #include "includes.h"
++#include <dirent.h>
++#include <sys/stat.h>
+ 
+ #include "common.h"
+ #include "utils/uuid.h"
+@@ -3882,6 +3884,65 @@
+ }
+ 
+ 
++static int is_config_file(DIR *dir, const char *path, const char *fn)
++{
++	size_t len = strlen(fn);
++	struct stat st;
++
++	if (fn[0] == '.')
++		return 0;
++
++	if (len < 6 || os_strcmp(&fn[len - 5], ".conf"))
++		return 0;
++
++	if (fstatat(dirfd(dir), fn, &st, 0)) {
++		wpa_printf(MSG_ERROR, "Failed to stat %s/%s", path, fn);
++		return 0;
++	}
++
++	if (S_ISDIR(st.st_mode)) {
++		wpa_printf(MSG_ERROR, "nested directories are not supported");
++		return 0;
++	}
++
++	return 1;
++}
++
++static int wpa_config_process_include_dir(
++	const struct global_parse_data *data,
++	struct wpa_config *config, int line, const char *pos)
++{
++	char fullpath[PATH_MAX];
++	struct dirent *dent;
++	DIR *dir;
++	int res = 0;
++
++	dir = opendir(pos);
++	if (!dir) {
++		wpa_printf(MSG_ERROR, "could not find include dir %s",
++			   pos);
++		return -1;
++	}
++	wpa_printf(MSG_DEBUG, "Including directory %s", pos);
++	while ((dent = readdir(dir))) {
++#ifdef _DIRENT_HAVE_D_TYPE
++		if (dent->d_type != DT_REG)
++			continue;
++#endif /* _DIRENT_HAVE_D_TYPE */
++		if (!is_config_file(dir, pos, dent->d_name))
++			continue;
++		os_snprintf(fullpath, PATH_MAX, "%s/%s", pos, dent->d_name);
++		if (!wpa_config_read(fullpath, config)) {
++			res = -1;
++			break;
++		}
++	}
++	wpa_printf(MSG_DEBUG, "Finished scanning directory %s", pos);
++	closedir(dir);
++	return res;
++}
++
++
+ static int wpa_config_process_load_dynamic_eap(
+ 	const struct global_parse_data *data, struct wpa_config *config,
+ 	int line, const char *so)
+@@ -4371,6 +4432,7 @@
+ 	{ INT(gas_address3), 0 },
+ 	{ INT_RANGE(ftm_responder, 0, 1), 0 },
+ 	{ INT_RANGE(ftm_initiator, 0, 1), 0 },
++	{ FUNC_NO_VAR(include_dir), 0 },
+ };
+ 
+ #undef FUNC
+diff -ru wpa_supplicant-2.6.orig/wpa_supplicant/config_file.c wpa_supplicant-2.6/wpa_supplicant/config_file.c
+--- wpa_supplicant-2.6.orig/wpa_supplicant/config_file.c	2016-10-02 13:51:11.000000000 -0500
++++ wpa_supplicant-2.6/wpa_supplicant/config_file.c	2018-03-20 16:31:09.459776537 -0500
+@@ -159,7 +159,7 @@
+ }
+ 
+ 
+-static struct wpa_ssid * wpa_config_read_network(FILE *f, int *line, int id)
++static struct wpa_ssid * wpa_config_read_network(FILE *f, int *line)
+ {
+ 	struct wpa_ssid *ssid;
+ 	int errors = 0, end = 0;
+@@ -171,7 +171,6 @@
+ 	if (ssid == NULL)
+ 		return NULL;
+ 	dl_list_init(&ssid->psk_list);
+-	ssid->id = id;
+ 
+ 	wpa_config_set_network_defaults(ssid);
+ 
+@@ -220,7 +219,7 @@
+ }
+ 
+ 
+-static struct wpa_cred * wpa_config_read_cred(FILE *f, int *line, int id)
++static struct wpa_cred * wpa_config_read_cred(FILE *f, int *line)
+ {
+ 	struct wpa_cred *cred;
+ 	int errors = 0, end = 0;
+@@ -230,7 +229,6 @@
+ 	cred = os_zalloc(sizeof(*cred));
+ 	if (cred == NULL)
+ 		return NULL;
+-	cred->id = id;
+ 	cred->sim_num = DEFAULT_USER_SELECTED_SIM;
+ 
+ 	while (wpa_config_get_line(buf, sizeof(buf), f, line, &pos)) {
+@@ -364,11 +362,10 @@
+ 	FILE *f;
+ 	char buf[512], *pos;
+ 	int errors = 0, line = 0;
+-	struct wpa_ssid *ssid, *tail, *head;
+-	struct wpa_cred *cred, *cred_tail, *cred_head;
++	struct wpa_ssid *ssid;
++	struct wpa_cred *cred;
+ 	struct wpa_config *config;
+-	int id = 0;
+-	int cred_id = 0;
++	int id;
+ 
+ 	if (name == NULL)
+ 		return NULL;
+@@ -381,12 +378,6 @@
+ 			   "structure");
+ 		return NULL;
+ 	}
+-	tail = head = config->ssid;
+-	while (tail && tail->next)
+-		tail = tail->next;
+-	cred_tail = cred_head = config->cred;
+-	while (cred_tail && cred_tail->next)
+-		cred_tail = cred_tail->next;
+ 
+ 	wpa_printf(MSG_DEBUG, "Reading configuration file '%s'", name);
+ 	f = fopen(name, "r");
+@@ -399,19 +390,15 @@
+ 
+ 	while (wpa_config_get_line(buf, sizeof(buf), f, &line, &pos)) {
+ 		if (os_strcmp(pos, "network={") == 0) {
+-			ssid = wpa_config_read_network(f, &line, id++);
++			ssid = wpa_config_read_network(f, &line);
+ 			if (ssid == NULL) {
+ 				wpa_printf(MSG_ERROR, "Line %d: failed to "
+ 					   "parse network block.", line);
+ 				errors++;
+ 				continue;
+ 			}
+-			if (head == NULL) {
+-				head = tail = ssid;
+-			} else {
+-				tail->next = ssid;
+-				tail = ssid;
+-			}
++			ssid->next = config->ssid;
++			config->ssid = ssid;
+ 			if (wpa_config_add_prio_network(config, ssid)) {
+ 				wpa_printf(MSG_ERROR, "Line %d: failed to add "
+ 					   "network block to priority list.",
+@@ -420,19 +407,15 @@
+ 				continue;
+ 			}
+ 		} else if (os_strcmp(pos, "cred={") == 0) {
+-			cred = wpa_config_read_cred(f, &line, cred_id++);
++			cred = wpa_config_read_cred(f, &line);
+ 			if (cred == NULL) {
+ 				wpa_printf(MSG_ERROR, "Line %d: failed to "
+ 					   "parse cred block.", line);
+ 				errors++;
+ 				continue;
+ 			}
+-			if (cred_head == NULL) {
+-				cred_head = cred_tail = cred;
+-			} else {
+-				cred_tail->next = cred;
+-				cred_tail = cred;
+-			}
++			cred->next = config->cred;
++			config->cred = cred;
+ #ifndef CONFIG_NO_CONFIG_BLOBS
+ 		} else if (os_strncmp(pos, "blob-base64-", 12) == 0) {
+ 			if (wpa_config_process_blob(config, f, &line, pos + 12)
+@@ -453,15 +436,18 @@
+ 
+ 	fclose(f);
+ 
+-	config->ssid = head;
++	id = 0;
++	for (ssid = config->ssid; ssid; ssid = ssid->next)
++		ssid->id = id++;
+ 	wpa_config_debug_dump_networks(config);
+-	config->cred = cred_head;
++	id = 0;
++	for (cred = config->cred; cred; cred = cred->next)
++		cred->id = id++;
+ 
+ #ifndef WPA_IGNORE_CONFIG_ERRORS
+ 	if (errors) {
+ 		wpa_config_free(config);
+ 		config = NULL;
+-		head = NULL;
+ 	}
+ #endif /* WPA_IGNORE_CONFIG_ERRORS */
+ 
+diff -ru wpa_supplicant-2.6.orig/wpa_supplicant/wpa_supplicant.conf wpa_supplicant-2.6/wpa_supplicant/wpa_supplicant.conf
+--- wpa_supplicant-2.6.orig/wpa_supplicant/wpa_supplicant.conf	2016-10-02 13:51:11.000000000 -0500
++++ wpa_supplicant-2.6/wpa_supplicant/wpa_supplicant.conf	2018-03-20 16:31:03.989639736 -0500
+@@ -23,6 +23,13 @@
+ # it.
+ #update_config=1
+ 
++# Include configuration files from a given directory
++#
++# Every file in the include_dir matching *.conf will be parsed as if its lines
++# were part of this main configuration file.  This option may be specified more
++# than once.
++#include_dir=/etc/wpa_supplicant/conf.d
++
+ # global configuration (shared by all network blocks)
+ #
+ # Parameters for the control interface. If this is specified, wpa_supplicant
